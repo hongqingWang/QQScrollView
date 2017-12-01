@@ -10,6 +10,7 @@
 #import "QQRecommendViewController.h"
 #import "QQGenneralViewController.h"
 
+
 #define QQ_HOME_SCREEN_WIDTH                        [UIScreen mainScreen].bounds.size.width
 #define QQ_HOME_SCREEN_HEIGHT                       [UIScreen mainScreen].bounds.size.height
 #define QQ_HOME_TITLE_SCROLL_VIEW_HEIGHT            30
@@ -37,6 +38,7 @@ static NSString *const cellId = @"aaa";
     [self setupTitles];
     // 添加默认子控制器
     [self setupDefaultViewController];
+    
 }
 
 #pragma mark - SetupUI
