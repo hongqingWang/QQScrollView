@@ -13,6 +13,7 @@
 		04EAF5B81FD14AA7005817DD /* QQHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EAF5B61FD14AA7005817DD /* QQHomeViewController.m */; };
 		04EAF5BF1FD14B06005817DD /* QQRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EAF5BD1FD14B06005817DD /* QQRecommendViewController.m */; };
 		04EAF5C31FD14BB8005817DD /* QQGenneralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EAF5C21FD14BB8005817DD /* QQGenneralViewController.m */; };
+		CC782063D0179E68B841F7C7 /* libPods-QQScrollView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 614F3C513DAFCA9768134F1B /* libPods-QQScrollView.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,9 @@
 		04EAF5BE1FD14B06005817DD /* QQRecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QQRecommendViewController.h; sourceTree = "<group>"; };
 		04EAF5C11FD14BB8005817DD /* QQGenneralViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QQGenneralViewController.h; sourceTree = "<group>"; };
 		04EAF5C21FD14BB8005817DD /* QQGenneralViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQGenneralViewController.m; sourceTree = "<group>"; };
+		614F3C513DAFCA9768134F1B /* libPods-QQScrollView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QQScrollView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		86F7F49DE8D1DE9968BFB906 /* Pods-QQScrollView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QQScrollView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QQScrollView/Pods-QQScrollView.debug.xcconfig"; sourceTree = "<group>"; };
+		E25BF256CF25F7E8EDFED4CA /* Pods-QQScrollView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QQScrollView.release.xcconfig"; path = "Pods/Target Support Files/Pods-QQScrollView/Pods-QQScrollView.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC782063D0179E68B841F7C7 /* libPods-QQScrollView.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +51,8 @@
 			children = (
 				04EAF55C1FD136D3005817DD /* QQScrollView */,
 				04EAF55B1FD136D3005817DD /* Products */,
+				42611408D643000D2101981F /* Pods */,
+				BBE801F6267BCCD030239596 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -219,6 +226,23 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		42611408D643000D2101981F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				86F7F49DE8D1DE9968BFB906 /* Pods-QQScrollView.debug.xcconfig */,
+				E25BF256CF25F7E8EDFED4CA /* Pods-QQScrollView.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BBE801F6267BCCD030239596 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				614F3C513DAFCA9768134F1B /* libPods-QQScrollView.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -226,9 +250,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04EAF5701FD136D3005817DD /* Build configuration list for PBXNativeTarget "QQScrollView" */;
 			buildPhases = (
+				66CE0DE181C553338B55F8E8 /* [CP] Check Pods Manifest.lock */,
 				04EAF5561FD136D3005817DD /* Sources */,
 				04EAF5571FD136D3005817DD /* Frameworks */,
 				04EAF5581FD136D3005817DD /* Resources */,
+				6A4701F951361638D407C912 /* [CP] Embed Pods Frameworks */,
+				FC50C6131B438FA977C7CE16 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -283,6 +310,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		66CE0DE181C553338B55F8E8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QQScrollView-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6A4701F951361638D407C912 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QQScrollView/Pods-QQScrollView-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC50C6131B438FA977C7CE16 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QQScrollView/Pods-QQScrollView-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		04EAF5561FD136D3005817DD /* Sources */ = {
@@ -406,6 +484,7 @@
 		};
 		04EAF5711FD136D3005817DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86F7F49DE8D1DE9968BFB906 /* Pods-QQScrollView.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -422,6 +501,7 @@
 		};
 		04EAF5721FD136D3005817DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E25BF256CF25F7E8EDFED4CA /* Pods-QQScrollView.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
