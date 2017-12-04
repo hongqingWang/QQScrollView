@@ -8,6 +8,9 @@
 
 #import "QQRecommendCell.h"
 #import <Masonry.h>
+#import <UIImageView+WebCache.h>
+#import "QQRecommendViewModel.h"
+#import "QQRecommend.h"
 
 @interface QQRecommendCell ()
 
@@ -23,6 +26,16 @@
 @end
 
 @implementation QQRecommendCell
+
+- (void)setViewModel:(QQRecommendViewModel *)viewModel {
+    _viewModel = viewModel;
+    
+    //    [self.newsImageView sd_setImageWithURL:viewModel.imgsrc_url];
+    [self.newsImageView sd_setImageWithURL:viewModel.imgsrc_url placeholderImage:[UIImage imageNamed:@"qq_news_placeholder"]];
+    self.newsTitleLabel.text = viewModel.recommend.title;
+    self.newsSubTitleLabel.text = viewModel.recommend.digest;
+    self.replyCountLabel.text = viewModel.replyCount_string;
+}
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     

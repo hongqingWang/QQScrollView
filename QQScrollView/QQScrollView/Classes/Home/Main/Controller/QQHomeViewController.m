@@ -14,8 +14,6 @@
 #define QQ_HOME_SCREEN_HEIGHT                       [UIScreen mainScreen].bounds.size.height
 #define QQ_HOME_TITLE_SCROLL_VIEW_HEIGHT            30
 
-static NSString *const cellId = @"aaa";
-
 @interface QQHomeViewController ()<UIScrollViewDelegate>
 
 /// TitleScrollView

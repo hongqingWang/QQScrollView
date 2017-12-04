@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+@class QQRecommendViewModel;
 
 @interface QQRecommendCell : UITableViewCell
+
+/// RecommendViewModel
+@property (nonatomic, strong) QQRecommendViewModel *viewModel;
 
 + (instancetype)recommendCellWithTableView:(UITableView *)tableView;
 

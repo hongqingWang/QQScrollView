@@ -12,8 +12,8 @@
 @interface QQRecommendListViewModel : NSObject
 
 /// 推荐新闻模型数组
-@property (nonatomic, strong) NSMutableArray *recommendList;
+@property (nonatomic, strong) NSMutableArray *newsList;
 
-- (void)loadRecommendDataCompletion:(void (^)(BOOL isSuccessed))completion;
+- (void)loadNewsDataCompletion:(void (^)(BOOL isSuccessed))completion;
 
 @end
