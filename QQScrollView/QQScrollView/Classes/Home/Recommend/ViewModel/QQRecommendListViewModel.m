@@ -8,7 +8,6 @@
 
 #import "QQRecommendListViewModel.h"
 
-
 @implementation QQRecommendListViewModel
 
 - (void)loadRecommendDataCompletion:(void (^)(BOOL))completion {

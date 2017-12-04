@@ -1,16 +1,16 @@
 //
-//  QQNetworkManager+Home.m
+//  QQNetworkManager+News.m
 //  QQScrollView
 //
-//  Created by Mac on 01/12/2017.
+//  Created by Mac on 04/12/2017.
 //  Copyright © 2017 Mac. All rights reserved.
 //
 
-#import "QQNetworkManager+Home.h"
+#import "QQNetworkManager+News.h"
 
 static NSString *const newsURLString = @"http://c.m.163.com/nc/article/headline/T1348647853363/0-10.html";
 
-@implementation QQNetworkManager (Home)
+@implementation QQNetworkManager (News)
 
 - (void)loadNewsDataCompletion:(void (^)(NSArray *))completion {
     
