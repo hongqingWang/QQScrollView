@@ -9,6 +9,7 @@
 #import "QQHomeViewController.h"
 #import "QQRecommendViewController.h"
 #import "QQGenneralViewController.h"
+#import "QQSliderLabel.h"
 
 #define QQ_HOME_SCREEN_WIDTH                        [UIScreen mainScreen].bounds.size.width
 #define QQ_HOME_SCREEN_HEIGHT                       [UIScreen mainScreen].bounds.size.height
@@ -36,6 +37,8 @@
     // 添加默认子控制器
     [self setupDefaultViewController];
     
+    QQSliderLabel *fistLable = [self.titleScrollView.subviews firstObject];
+    fistLable.scale = 1.0;
 }
 
 #pragma mark - SetupUI
@@ -81,6 +84,7 @@
     [self addChildViewController:vc05];
     
     self.contentScrollView.contentSize = CGSizeMake(QQ_HOME_SCREEN_WIDTH * self.childViewControllers.count, 0);
+    self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 #pragma mark - setupTitles
@@ -93,19 +97,37 @@
     
     for (NSInteger i = 0; i < count; i++) {
         
-        UILabel *label = [[UILabel alloc] init];
+        QQSliderLabel *label = [[QQSliderLabel alloc] init];
+        label.tag = i;
         [self.titleScrollView addSubview:label];
         
         CGFloat labelX = labelW * i;
         label.frame = CGRectMake(labelX, labelY, labelW, labelH);
-        label.userInteractionEnabled = YES;
+        
         
         UIViewController *vc = self.childViewControllers[i];
         label.text = vc.title;
+        
+        // 监听点击
+        [label addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(lableClick:)]];
     }
     
     CGFloat titleContentWidth = labelW * count;
     self.titleScrollView.contentSize = CGSizeMake(titleContentWidth, 0);
+}
+
+/**
+ 监听lable的点击
+ */
+- (void)lableClick:(UITapGestureRecognizer *)recognizer {
+    // 1.获得被点击的lable
+    QQSliderLabel *lable = (QQSliderLabel *)recognizer.view;
+    
+    // 2.计算x方向上的偏移量
+    CGFloat offsetX = lable.tag * self.contentScrollView.frame.size.width;
+    
+    // 3.设置偏移量
+    [self.contentScrollView setContentOffset:CGPointMake(offsetX, 0) animated:YES];
 }
 
 #pragma mark - setupDefaultViewController
@@ -123,12 +145,33 @@
     UIViewController *vc = self.childViewControllers[index];
     NSLog(@"%ld", index);
     
-    // 如果子控制器的view已经在上面,就直接返回(下面这句话暂时注释了,并没有产生什么影响)
-//    if (vc.view.superview) {
-//        return;
-//    }
+    QQSliderLabel *label = self.titleScrollView.subviews[index];
+    CGFloat width = self.titleScrollView.frame.size.width;
+    CGFloat offsetX = label.center.x - width * 0.5;
     
-    CGFloat Y = 10;
+    // 最大偏移量
+    CGFloat maxOffsetX = self.titleScrollView.contentSize.width - width;
+    if (offsetX < 0) {
+        offsetX = 0;
+    } else if (offsetX > maxOffsetX) {
+        offsetX = maxOffsetX;
+    }
+    
+    [self.titleScrollView setContentOffset:CGPointMake(offsetX, 0) animated:YES];
+    
+//    [self.titleScrollView.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//        if (idx != index) {
+//            QQSliderLabel *otherLabel = self.titleScrollView.subviews[idx];
+//            otherLabel.scale = 0.0;
+//        }
+//    }];
+    
+    // 如果子控制器的view已经在上面,就直接返回(下面这句话暂时注释了,并没有产生什么影响)
+    if (vc.view.superview) {
+        return;
+    }
+    
+    CGFloat Y = 0;
     CGFloat W = scrollView.frame.size.width;
     CGFloat H = scrollView.frame.size.height;
     CGFloat X = W * index;
@@ -140,10 +183,44 @@
 }
 
 /**
- scrollView停止滚动调用这个方法(用户手动触发的动画结束,会调用这个方法)
+ * ScrollView停止滚动调用这个方法(用户手动触发的动画结束,会调用这个方法)
+ * 不加的话,滑动的时候就加载不出来下一个页面
  */
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     [self scrollViewDidEndScrollingAnimation:scrollView];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    // 1.需要进行控制的文字(2个标题)
+    // 2.两个标题各自的比例值
+    /**********  warning 这里最好取绝对值 (保证计算出来的比例是个非负数)  **********/
+    // 偏移量 / 宽度
+    CGFloat value = ABS(self.contentScrollView.contentOffset.x / self.contentScrollView.frame.size.width);
+    NSLog(@"value = %f", value);
+    // 左边文字的索引
+    NSUInteger leftIndex = (NSUInteger)value;
+    NSLog(@"leftIndex = %ld", leftIndex);
+    // 右边文字的索引
+    NSUInteger rightIndex = leftIndex + 1;
+    NSLog(@"rightIndex = %ld", rightIndex);
+    // 右边文字的比例
+    CGFloat rightScale = value - leftIndex;
+    NSLog(@"rightScale = %f", rightScale);
+    // 左边文字的比例
+    CGFloat leftScale = 1 - rightScale;
+    NSLog(@"leftScale = %f", leftScale);
+    // 取出lable设置大小和颜色
+    QQSliderLabel *leftLable = self.titleScrollView.subviews[leftIndex];
+    leftLable.scale = leftScale;
+    if (rightIndex < self.titleScrollView.subviews.count) {
+        QQSliderLabel *rightLable = self.titleScrollView.subviews[rightIndex];
+        
+        if ([rightLable isKindOfClass:[UILabel class]]) {
+            rightLable.scale = rightScale;
+        }
+        
+    }
 }
 
 #pragma mark - Getters and Setters
@@ -152,7 +229,7 @@
         CGRect frame = CGRectMake(0, 64, QQ_HOME_SCREEN_WIDTH, QQ_HOME_TITLE_SCROLL_VIEW_HEIGHT);
         _titleScrollView = [[UIScrollView alloc] initWithFrame:frame];
         _titleScrollView.bounces = YES;
-//        _titleScrollView.backgroundColor = [UIColor redColor];
+        _titleScrollView.showsHorizontalScrollIndicator = NO;
     }
     return _titleScrollView;
 }
