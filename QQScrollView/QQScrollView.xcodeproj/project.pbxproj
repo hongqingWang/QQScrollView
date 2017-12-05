@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		04105BA81FD4E3B700DC3EF3 /* QQNews.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04105BA71FD4E3B700DC3EF3 /* QQNews.xcassets */; };
 		04105BAB1FD4EBE800DC3EF3 /* QQNetworkManager+News.m in Sources */ = {isa = PBXBuildFile; fileRef = 04105BAA1FD4EBE800DC3EF3 /* QQNetworkManager+News.m */; };
-		04105BAE1FD4FE5200DC3EF3 /* QQSliderLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04105BAD1FD4FE5200DC3EF3 /* QQSliderLabel.m */; };
+		04105BB61FD647FF00DC3EF3 /* QQSliderLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04105BB41FD647FF00DC3EF3 /* QQSliderLabel.m */; };
+		04105BB91FD64DB500DC3EF3 /* QQHomeMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04105BB81FD64DB500DC3EF3 /* QQHomeMainController.m */; };
 		04EAF5671FD136D3005817DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04EAF5661FD136D3005817DD /* Assets.xcassets */; };
 		04EAF5A91FD13B06005817DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EAF5A51FD13B06005817DD /* main.m */; };
 		04EAF5AA1FD13B06005817DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EAF5A61FD13B06005817DD /* AppDelegate.m */; };
@@ -28,8 +29,10 @@
 		04105BA71FD4E3B700DC3EF3 /* QQNews.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = QQNews.xcassets; sourceTree = "<group>"; };
 		04105BA91FD4EBE800DC3EF3 /* QQNetworkManager+News.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QQNetworkManager+News.h"; sourceTree = "<group>"; };
 		04105BAA1FD4EBE800DC3EF3 /* QQNetworkManager+News.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "QQNetworkManager+News.m"; sourceTree = "<group>"; };
-		04105BAC1FD4FE5200DC3EF3 /* QQSliderLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QQSliderLabel.h; sourceTree = "<group>"; };
-		04105BAD1FD4FE5200DC3EF3 /* QQSliderLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQSliderLabel.m; sourceTree = "<group>"; };
+		04105BB41FD647FF00DC3EF3 /* QQSliderLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QQSliderLabel.m; sourceTree = "<group>"; };
+		04105BB51FD647FF00DC3EF3 /* QQSliderLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QQSliderLabel.h; sourceTree = "<group>"; };
+		04105BB71FD64DB500DC3EF3 /* QQHomeMainController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QQHomeMainController.h; sourceTree = "<group>"; };
+		04105BB81FD64DB500DC3EF3 /* QQHomeMainController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQHomeMainController.m; sourceTree = "<group>"; };
 		04EAF55A1FD136D3005817DD /* QQScrollView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QQScrollView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EAF5661FD136D3005817DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04EAF56B1FD136D3005817DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -69,6 +72,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04105BB31FD647DE00DC3EF3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04105BB51FD647FF00DC3EF3 /* QQSliderLabel.h */,
+				04105BB41FD647FF00DC3EF3 /* QQSliderLabel.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		04EAF5511FD136D3005817DD = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				04EAF5B41FD14AA7005817DD /* Controller */,
+				04105BB31FD647DE00DC3EF3 /* View */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -221,6 +234,8 @@
 			children = (
 				04EAF5B51FD14AA7005817DD /* QQHomeViewController.h */,
 				04EAF5B61FD14AA7005817DD /* QQHomeViewController.m */,
+				04105BB71FD64DB500DC3EF3 /* QQHomeMainController.h */,
+				04105BB81FD64DB500DC3EF3 /* QQHomeMainController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -290,8 +305,6 @@
 			children = (
 				04EAF5DD1FD161F1005817DD /* QQRecommendCell.h */,
 				04EAF5DE1FD161F1005817DD /* QQRecommendCell.m */,
-				04105BAC1FD4FE5200DC3EF3 /* QQSliderLabel.h */,
-				04105BAD1FD4FE5200DC3EF3 /* QQSliderLabel.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -442,10 +455,11 @@
 				04EAF5D61FD161C3005817DD /* QQRecommendListViewModel.m in Sources */,
 				04EAF5DF1FD161F1005817DD /* QQRecommendCell.m in Sources */,
 				04EAF5C71FD159F7005817DD /* QQNetworkManager.m in Sources */,
+				04105BB91FD64DB500DC3EF3 /* QQHomeMainController.m in Sources */,
+				04105BB61FD647FF00DC3EF3 /* QQSliderLabel.m in Sources */,
 				04EAF5BF1FD14B06005817DD /* QQRecommendViewController.m in Sources */,
 				04EAF5D91FD161CD005817DD /* QQRecommendViewModel.m in Sources */,
 				04EAF5C31FD14BB8005817DD /* QQGenneralViewController.m in Sources */,
-				04105BAE1FD4FE5200DC3EF3 /* QQSliderLabel.m in Sources */,
 				04EAF5A91FD13B06005817DD /* main.m in Sources */,
 				04105BAB1FD4EBE800DC3EF3 /* QQNetworkManager+News.m in Sources */,
 				04EAF5AA1FD13B06005817DD /* AppDelegate.m in Sources */,

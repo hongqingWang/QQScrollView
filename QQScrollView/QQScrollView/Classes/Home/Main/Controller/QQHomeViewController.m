@@ -19,6 +19,8 @@
 
 /// TitleScrollView
 @property (nonatomic, strong) UIScrollView *titleScrollView;
+/// 分割线
+@property (nonatomic, strong) UIView *carveView;
 /// ContenScrollView
 @property (nonatomic, strong) UIScrollView *contentScrollView;
 /// 频道
@@ -28,12 +30,14 @@
 
 @implementation QQHomeViewController
 
+#pragma mark - Left Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self setupUI];
-    [self setupChildViewControllers];
-    [self setupTitles];
+    [self setupContentScrollView];
+    [self setupCarveView];
+    [self setupTitleScrollView];
     // 添加默认子控制器
     [self setupDefaultViewController];
     
@@ -51,8 +55,8 @@
     [self.view addSubview:self.contentScrollView];
 }
 
-#pragma mark - setupChildViewControllers
-- (void)setupChildViewControllers {
+#pragma mark - setupContentScrollView
+- (void)setupContentScrollView {
     
     QQRecommendViewController *recommendVc = [[QQRecommendViewController alloc] init];
     recommendVc.title = self.channelList[0];
@@ -66,19 +70,19 @@
     UIViewController *vc01 = [[UIViewController alloc] init];
     vc01.title = self.channelList[2];
     [self addChildViewController:vc01];
-    
+
     UIViewController *vc02 = [[UIViewController alloc] init];
     vc02.title = self.channelList[3];
     [self addChildViewController:vc02];
-    
+
     UIViewController *vc03 = [[UIViewController alloc] init];
     vc03.title = self.channelList[4];
     [self addChildViewController:vc03];
-    
+
     UIViewController *vc04 = [[UIViewController alloc] init];
     vc04.title = self.channelList[5];
     [self addChildViewController:vc04];
-    
+
     UIViewController *vc05 = [[UIViewController alloc] init];
     vc05.title = self.channelList[6];
     [self addChildViewController:vc05];
@@ -87,8 +91,14 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
-#pragma mark - setupTitles
-- (void)setupTitles {
+#pragma mark - setupCarveView
+- (void)setupCarveView {
+    
+    [self.view addSubview:self.carveView];
+}
+
+#pragma mark - setupTitleScrollView
+- (void)setupTitleScrollView {
     
     NSInteger count = self.childViewControllers.count;
     CGFloat labelY = 0;
@@ -116,8 +126,9 @@
     self.titleScrollView.contentSize = CGSizeMake(titleContentWidth, 0);
 }
 
+#pragma mark - Event Response
 /**
- 监听lable的点击
+ * 监听`Lable`的点击
  */
 - (void)lableClick:(UITapGestureRecognizer *)recognizer {
     // 1.获得被点击的lable
@@ -143,7 +154,6 @@
     
     NSInteger index = scrollView.contentOffset.x / scrollView.frame.size.width;
     UIViewController *vc = self.childViewControllers[index];
-    NSLog(@"%ld", index);
     
     QQSliderLabel *label = self.titleScrollView.subviews[index];
     CGFloat width = self.titleScrollView.frame.size.width;
@@ -159,12 +169,12 @@
     
     [self.titleScrollView setContentOffset:CGPointMake(offsetX, 0) animated:YES];
     
-//    [self.titleScrollView.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-//        if (idx != index) {
-//            QQSliderLabel *otherLabel = self.titleScrollView.subviews[idx];
-//            otherLabel.scale = 0.0;
-//        }
-//    }];
+    [self.titleScrollView.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (idx != index) {
+            QQSliderLabel *otherLabel = self.titleScrollView.subviews[idx];
+            otherLabel.scale = 0.0;
+        }
+    }];
     
     // 如果子控制器的view已经在上面,就直接返回(下面这句话暂时注释了,并没有产生什么影响)
     if (vc.view.superview) {
@@ -175,9 +185,6 @@
     CGFloat W = scrollView.frame.size.width;
     CGFloat H = scrollView.frame.size.height;
     CGFloat X = W * index;
-    NSLog(@"%f", W);
-    NSLog(@"%f", H);
-    NSLog(@"%f", X);
     vc.view.frame = CGRectMake(X, Y, W, H);
     [scrollView addSubview:vc.view];
 }
@@ -197,29 +204,20 @@
     /**********  warning 这里最好取绝对值 (保证计算出来的比例是个非负数)  **********/
     // 偏移量 / 宽度
     CGFloat value = ABS(self.contentScrollView.contentOffset.x / self.contentScrollView.frame.size.width);
-    NSLog(@"value = %f", value);
     // 左边文字的索引
     NSUInteger leftIndex = (NSUInteger)value;
-    NSLog(@"leftIndex = %ld", leftIndex);
     // 右边文字的索引
     NSUInteger rightIndex = leftIndex + 1;
-    NSLog(@"rightIndex = %ld", rightIndex);
     // 右边文字的比例
     CGFloat rightScale = value - leftIndex;
-    NSLog(@"rightScale = %f", rightScale);
     // 左边文字的比例
     CGFloat leftScale = 1 - rightScale;
-    NSLog(@"leftScale = %f", leftScale);
     // 取出lable设置大小和颜色
     QQSliderLabel *leftLable = self.titleScrollView.subviews[leftIndex];
     leftLable.scale = leftScale;
     if (rightIndex < self.titleScrollView.subviews.count) {
         QQSliderLabel *rightLable = self.titleScrollView.subviews[rightIndex];
-        
-        if ([rightLable isKindOfClass:[UILabel class]]) {
-            rightLable.scale = rightScale;
-        }
-        
+        rightLable.scale = rightScale;
     }
 }
 
@@ -230,8 +228,18 @@
         _titleScrollView = [[UIScrollView alloc] initWithFrame:frame];
         _titleScrollView.bounces = YES;
         _titleScrollView.showsHorizontalScrollIndicator = NO;
+        _titleScrollView.showsVerticalScrollIndicator = NO;
     }
     return _titleScrollView;
+}
+
+- (UIView *)carveView {
+    if (_carveView == nil) {
+        _carveView = [[UIView alloc] init];
+        _carveView.backgroundColor = [UIColor lightGrayColor];
+        _carveView.frame = CGRectMake(0, 64 + QQ_HOME_TITLE_SCROLL_VIEW_HEIGHT, QQ_HOME_SCREEN_WIDTH, 0.5);
+    }
+    return _carveView;
 }
 
 - (UIScrollView *)contentScrollView {
@@ -241,7 +249,7 @@
         _contentScrollView.pagingEnabled = YES;
         _contentScrollView.bounces = YES;
         _contentScrollView.delegate = self;
-//        _contentScrollView.showsHorizontalScrollIndicator = NO;
+        _contentScrollView.showsHorizontalScrollIndicator = NO;
     }
     return _contentScrollView;
 }
