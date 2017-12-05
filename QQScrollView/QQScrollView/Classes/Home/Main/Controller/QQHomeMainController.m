@@ -13,6 +13,10 @@
 #import "QQHomeMainListViewModel.h"
 #import "QQChannel.h"
 
+#import "QQHomeAController.h"
+#import "QQNewsAudioController.h"
+#import "QQNewsVideoController.h"
+
 #define QQ_HOME_SCREEN_WIDTH                        [UIScreen mainScreen].bounds.size.width
 #define QQ_HOME_SCREEN_HEIGHT                       [UIScreen mainScreen].bounds.size.height
 #define QQ_HOME_TITLE_SCROLL_VIEW_HEIGHT            30
@@ -74,33 +78,45 @@
 #pragma mark - setupContentScrollView
 - (void)setupContentScrollView {
     
+    QQHomeAController *aVc = [[QQHomeAController alloc] init];
+    aVc.title = [self.homeMainListViewModel.homeMainList[0] tname];
+    [self addChildViewController:aVc];
+    
     QQRecommendViewController *recommendVc = [[QQRecommendViewController alloc] init];
-    recommendVc.title = [self.homeMainListViewModel.homeMainList[0] tname];
+    recommendVc.title = [self.homeMainListViewModel.homeMainList[1] tname];
     [self addChildViewController:recommendVc];
     
+    QQNewsAudioController *newsAudioVc = [[QQNewsAudioController alloc] init];
+    newsAudioVc.title = [self.homeMainListViewModel.homeMainList[2] tname];
+    [self addChildViewController:newsAudioVc];
+    
+    QQNewsVideoController *newsVideoVc = [[QQNewsVideoController alloc] init];
+    newsVideoVc.title = [self.homeMainListViewModel.homeMainList[3] tname];
+    [self addChildViewController:newsVideoVc];
+    
     QQGenneralViewController *genneralVc = [[QQGenneralViewController alloc] init];
-    genneralVc.view.frame = self.contentScrollView.bounds;
-    genneralVc.title = [self.homeMainListViewModel.homeMainList[1] tname];
+//    genneralVc.view.frame = self.contentScrollView.bounds;
+    genneralVc.title = [self.homeMainListViewModel.homeMainList[4] tname];
     [self addChildViewController:genneralVc];
     
     UIViewController *vc01 = [[UIViewController alloc] init];
-    vc01.title = [self.homeMainListViewModel.homeMainList[2] tname];
+    vc01.title = [self.homeMainListViewModel.homeMainList[5] tname];
     [self addChildViewController:vc01];
     
     UIViewController *vc02 = [[UIViewController alloc] init];
-    vc02.title = [self.homeMainListViewModel.homeMainList[3] tname];
+    vc02.title = [self.homeMainListViewModel.homeMainList[6] tname];
     [self addChildViewController:vc02];
     
     UIViewController *vc03 = [[UIViewController alloc] init];
-    vc03.title = [self.homeMainListViewModel.homeMainList[4] tname];
+    vc03.title = [self.homeMainListViewModel.homeMainList[7] tname];
     [self addChildViewController:vc03];
     
     UIViewController *vc04 = [[UIViewController alloc] init];
-    vc04.title = [self.homeMainListViewModel.homeMainList[5] tname];
+    vc04.title = [self.homeMainListViewModel.homeMainList[8] tname];
     [self addChildViewController:vc04];
     
     UIViewController *vc05 = [[UIViewController alloc] init];
-    vc05.title = [self.homeMainListViewModel.homeMainList[6] tname];
+    vc05.title = [self.homeMainListViewModel.homeMainList[9] tname];
     [self addChildViewController:vc05];
     
     self.contentScrollView.contentSize = CGSizeMake(QQ_HOME_SCREEN_WIDTH * self.childViewControllers.count, 0);
@@ -260,7 +276,7 @@
 
 - (UIScrollView *)contentScrollView {
     if (_contentScrollView == nil) {
-        CGRect frame = CGRectMake(0, 64 + QQ_HOME_TITLE_SCROLL_VIEW_HEIGHT, QQ_HOME_SCREEN_WIDTH, QQ_HOME_SCREEN_HEIGHT - 64 - QQ_HOME_TITLE_SCROLL_VIEW_HEIGHT);
+        CGRect frame = CGRectMake(0, 64 + QQ_HOME_TITLE_SCROLL_VIEW_HEIGHT, QQ_HOME_SCREEN_WIDTH, QQ_HOME_SCREEN_HEIGHT - 64 - QQ_HOME_TITLE_SCROLL_VIEW_HEIGHT - 49);
         _contentScrollView = [[UIScrollView alloc] initWithFrame:frame];
         _contentScrollView.pagingEnabled = YES;
         _contentScrollView.bounces = YES;

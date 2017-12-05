@@ -15,6 +15,12 @@
 		04105BC71FD66D5300DC3EF3 /* QQChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04105BC61FD66D5300DC3EF3 /* QQChannel.m */; };
 		04105BC91FD66D7300DC3EF3 /* qq_news_channel.json in Resources */ = {isa = PBXBuildFile; fileRef = 04105BC81FD66D7300DC3EF3 /* qq_news_channel.json */; };
 		04105BCE1FD6870300DC3EF3 /* QQHomeMainListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04105BCD1FD6870300DC3EF3 /* QQHomeMainListViewModel.m */; };
+		04105BD11FD6988800DC3EF3 /* QQHomeTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04105BD01FD6988800DC3EF3 /* QQHomeTableView.m */; };
+		04105BD41FD6A6BC00DC3EF3 /* QQNewsOneImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04105BD31FD6A6BC00DC3EF3 /* QQNewsOneImageCell.m */; };
+		04105BD81FD6A74A00DC3EF3 /* QQNewsVideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04105BD71FD6A74A00DC3EF3 /* QQNewsVideoController.m */; };
+		04105BDB1FD6A88A00DC3EF3 /* QQNewsVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04105BDA1FD6A88A00DC3EF3 /* QQNewsVideoCell.m */; };
+		04105BE11FD6AA5100DC3EF3 /* QQNewsAudioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04105BE01FD6AA5100DC3EF3 /* QQNewsAudioCell.m */; };
+		04105BE51FD6AA9600DC3EF3 /* QQNewsAudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04105BE41FD6AA9600DC3EF3 /* QQNewsAudioController.m */; };
 		04EAF5671FD136D3005817DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04EAF5661FD136D3005817DD /* Assets.xcassets */; };
 		04EAF5A91FD13B06005817DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EAF5A51FD13B06005817DD /* main.m */; };
 		04EAF5AA1FD13B06005817DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EAF5A61FD13B06005817DD /* AppDelegate.m */; };
@@ -43,6 +49,18 @@
 		04105BC81FD66D7300DC3EF3 /* qq_news_channel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = qq_news_channel.json; sourceTree = "<group>"; };
 		04105BCC1FD6870300DC3EF3 /* QQHomeMainListViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QQHomeMainListViewModel.h; sourceTree = "<group>"; };
 		04105BCD1FD6870300DC3EF3 /* QQHomeMainListViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQHomeMainListViewModel.m; sourceTree = "<group>"; };
+		04105BCF1FD6988800DC3EF3 /* QQHomeTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QQHomeTableView.h; sourceTree = "<group>"; };
+		04105BD01FD6988800DC3EF3 /* QQHomeTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQHomeTableView.m; sourceTree = "<group>"; };
+		04105BD21FD6A6BC00DC3EF3 /* QQNewsOneImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QQNewsOneImageCell.h; sourceTree = "<group>"; };
+		04105BD31FD6A6BC00DC3EF3 /* QQNewsOneImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQNewsOneImageCell.m; sourceTree = "<group>"; };
+		04105BD61FD6A74A00DC3EF3 /* QQNewsVideoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QQNewsVideoController.h; sourceTree = "<group>"; };
+		04105BD71FD6A74A00DC3EF3 /* QQNewsVideoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQNewsVideoController.m; sourceTree = "<group>"; };
+		04105BD91FD6A88A00DC3EF3 /* QQNewsVideoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QQNewsVideoCell.h; sourceTree = "<group>"; };
+		04105BDA1FD6A88A00DC3EF3 /* QQNewsVideoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQNewsVideoCell.m; sourceTree = "<group>"; };
+		04105BDF1FD6AA5100DC3EF3 /* QQNewsAudioCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QQNewsAudioCell.h; sourceTree = "<group>"; };
+		04105BE01FD6AA5100DC3EF3 /* QQNewsAudioCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQNewsAudioCell.m; sourceTree = "<group>"; };
+		04105BE31FD6AA9600DC3EF3 /* QQNewsAudioController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QQNewsAudioController.h; sourceTree = "<group>"; };
+		04105BE41FD6AA9600DC3EF3 /* QQNewsAudioController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQNewsAudioController.m; sourceTree = "<group>"; };
 		04EAF55A1FD136D3005817DD /* QQScrollView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QQScrollView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EAF5661FD136D3005817DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04EAF56B1FD136D3005817DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,6 +103,14 @@
 			children = (
 				04105BB51FD647FF00DC3EF3 /* QQSliderLabel.h */,
 				04105BB41FD647FF00DC3EF3 /* QQSliderLabel.m */,
+				04105BCF1FD6988800DC3EF3 /* QQHomeTableView.h */,
+				04105BD01FD6988800DC3EF3 /* QQHomeTableView.m */,
+				04105BD21FD6A6BC00DC3EF3 /* QQNewsOneImageCell.h */,
+				04105BD31FD6A6BC00DC3EF3 /* QQNewsOneImageCell.m */,
+				04105BDF1FD6AA5100DC3EF3 /* QQNewsAudioCell.h */,
+				04105BE01FD6AA5100DC3EF3 /* QQNewsAudioCell.m */,
+				04105BD91FD6A88A00DC3EF3 /* QQNewsVideoCell.h */,
+				04105BDA1FD6A88A00DC3EF3 /* QQNewsVideoCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -123,6 +149,24 @@
 				04105BCD1FD6870300DC3EF3 /* QQHomeMainListViewModel.m */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		04105BD51FD6A71F00DC3EF3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04105BD61FD6A74A00DC3EF3 /* QQNewsVideoController.h */,
+				04105BD71FD6A74A00DC3EF3 /* QQNewsVideoController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04105BE21FD6AA8300DC3EF3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04105BE31FD6AA9600DC3EF3 /* QQNewsAudioController.h */,
+				04105BE41FD6AA9600DC3EF3 /* QQNewsAudioController.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		04EAF5511FD136D3005817DD = {
@@ -247,6 +291,7 @@
 		04EAF5B01FD14AA7005817DD /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				04105BE21FD6AA8300DC3EF3 /* Controller */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -254,6 +299,7 @@
 		04EAF5B11FD14AA7005817DD /* Video */ = {
 			isa = PBXGroup;
 			children = (
+				04105BD51FD6A71F00DC3EF3 /* Controller */,
 			);
 			path = Video;
 			sourceTree = "<group>";
@@ -499,18 +545,24 @@
 			files = (
 				04EAF5DC1FD161D9005817DD /* QQRecommend.m in Sources */,
 				04105BC71FD66D5300DC3EF3 /* QQChannel.m in Sources */,
+				04105BE51FD6AA9600DC3EF3 /* QQNewsAudioController.m in Sources */,
 				04EAF5D61FD161C3005817DD /* QQRecommendListViewModel.m in Sources */,
 				04EAF5DF1FD161F1005817DD /* QQRecommendCell.m in Sources */,
 				04EAF5C71FD159F7005817DD /* QQNetworkManager.m in Sources */,
 				04105BB91FD64DB500DC3EF3 /* QQHomeMainController.m in Sources */,
 				04105BB61FD647FF00DC3EF3 /* QQSliderLabel.m in Sources */,
 				04EAF5BF1FD14B06005817DD /* QQRecommendViewController.m in Sources */,
+				04105BD81FD6A74A00DC3EF3 /* QQNewsVideoController.m in Sources */,
+				04105BE11FD6AA5100DC3EF3 /* QQNewsAudioCell.m in Sources */,
 				04105BBE1FD6508400DC3EF3 /* QQHomeAController.m in Sources */,
 				04EAF5D91FD161CD005817DD /* QQRecommendViewModel.m in Sources */,
+				04105BD11FD6988800DC3EF3 /* QQHomeTableView.m in Sources */,
 				04EAF5C31FD14BB8005817DD /* QQGenneralViewController.m in Sources */,
 				04105BCE1FD6870300DC3EF3 /* QQHomeMainListViewModel.m in Sources */,
 				04EAF5A91FD13B06005817DD /* main.m in Sources */,
+				04105BDB1FD6A88A00DC3EF3 /* QQNewsVideoCell.m in Sources */,
 				04105BAB1FD4EBE800DC3EF3 /* QQNetworkManager+News.m in Sources */,
+				04105BD41FD6A6BC00DC3EF3 /* QQNewsOneImageCell.m in Sources */,
 				04EAF5AA1FD13B06005817DD /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

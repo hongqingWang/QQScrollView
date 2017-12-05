@@ -7,8 +7,12 @@
 //
 
 #import "QQHomeAController.h"
+#import "QQHomeTableView.h"
 
 @interface QQHomeAController ()
+
+/// TableView
+@property (nonatomic, strong) QQHomeTableView *tableView;
 
 @end
 
@@ -17,22 +21,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor redColor];
+    [self setupUI];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - SetupUI
+- (void)setupUI {
+    
+    [self.view addSubview:self.tableView];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - Getters and Setters
+- (QQHomeTableView *)tableView {
+    if (_tableView == nil) {
+        _tableView = [[QQHomeTableView alloc] init];
+    }
+    return _tableView;
 }
-*/
 
 @end

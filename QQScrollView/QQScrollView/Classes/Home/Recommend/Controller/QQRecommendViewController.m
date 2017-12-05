@@ -9,11 +9,12 @@
 #import "QQRecommendViewController.h"
 #import "QQRecommendCell.h"
 #import "QQRecommendListViewModel.h"
+#import "QQHomeTableView.h"
 
 @interface QQRecommendViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 /// TableView
-@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) QQHomeTableView *tableView;
 /// RecommendListViewModel
 @property (nonatomic, strong) QQRecommendListViewModel *recommendListViewModel;
 
@@ -60,9 +61,9 @@
 }
 
 #pragma mark - Getters and Setters
-- (UITableView *)tableView {
+- (QQHomeTableView *)tableView {
     if (_tableView == nil) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 64 - 30)];
+        _tableView = [[QQHomeTableView alloc] init];
         _tableView.dataSource = self;
         _tableView.delegate = self;
         _tableView.rowHeight = 100;

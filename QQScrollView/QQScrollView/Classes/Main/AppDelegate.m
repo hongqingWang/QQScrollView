@@ -21,7 +21,9 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     QQHomeMainController *homeMainVc = [[QQHomeMainController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:homeMainVc];
-    self.window.rootViewController = nav;
+    UITabBarController *tabBar = [[UITabBarController alloc] init];
+    [tabBar addChildViewController:nav];
+    self.window.rootViewController = tabBar;
     [self.window makeKeyAndVisible];
     
     return YES;
