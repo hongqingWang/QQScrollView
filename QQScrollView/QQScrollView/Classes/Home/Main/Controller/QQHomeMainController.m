@@ -63,7 +63,7 @@
     [self addChildViewController:recommendVc];
     
     QQGenneralViewController *genneralVc = [[QQGenneralViewController alloc] init];
-    genneralVc.view.frame = CGRectMake(0, 64, QQ_HOME_SCREEN_WIDTH, QQ_HOME_SCREEN_HEIGHT);
+    genneralVc.view.frame = self.contentScrollView.bounds;
     genneralVc.title = self.channelList[1];
     [self addChildViewController:genneralVc];
     
