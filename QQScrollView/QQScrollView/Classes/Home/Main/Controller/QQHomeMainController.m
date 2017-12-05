@@ -10,6 +10,8 @@
 #import "QQRecommendViewController.h"
 #import "QQGenneralViewController.h"
 #import "QQSliderLabel.h"
+#import "QQHomeMainListViewModel.h"
+#import "QQChannel.h"
 
 #define QQ_HOME_SCREEN_WIDTH                        [UIScreen mainScreen].bounds.size.width
 #define QQ_HOME_SCREEN_HEIGHT                       [UIScreen mainScreen].bounds.size.height
@@ -23,8 +25,10 @@
 @property (nonatomic, strong) UIView *carveView;
 /// ContenScrollView
 @property (nonatomic, strong) UIScrollView *contentScrollView;
+/// 视图模型
+@property (nonatomic, strong) QQHomeMainListViewModel *homeMainListViewModel;
 /// 频道
-@property (nonatomic, strong) NSArray *channelList;
+@property (nonatomic, strong) NSMutableArray *channelList;
 
 @end
 
@@ -34,15 +38,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self setupUI];
-    [self setupContentScrollView];
-    [self setupCarveView];
-    [self setupTitleScrollView];
-    // 添加默认子控制器
-    [self setupDefaultViewController];
+    [self loadChannelList];
+}
+
+#pragma mark - loadChannelList
+- (void)loadChannelList {
     
-    QQSliderLabel *fistLable = [self.titleScrollView.subviews firstObject];
-    fistLable.scale = 1.0;
+    [self.homeMainListViewModel loadChannalListCompletion:^(BOOL isSuccessed) {
+        if (!isSuccessed) {
+            NSLog(@"未加载到数据");
+        }
+        
+        [self setupUI];
+        [self setupContentScrollView];
+        [self setupCarveView];
+        [self setupTitleScrollView];
+        // 添加默认子控制器
+        [self setupDefaultViewController];
+        
+        QQSliderLabel *fistLable = [self.titleScrollView.subviews firstObject];
+        fistLable.scale = 1.0;
+    }];
 }
 
 #pragma mark - SetupUI
@@ -59,32 +75,32 @@
 - (void)setupContentScrollView {
     
     QQRecommendViewController *recommendVc = [[QQRecommendViewController alloc] init];
-    recommendVc.title = self.channelList[0];
+    recommendVc.title = [self.homeMainListViewModel.homeMainList[0] tname];
     [self addChildViewController:recommendVc];
     
     QQGenneralViewController *genneralVc = [[QQGenneralViewController alloc] init];
     genneralVc.view.frame = self.contentScrollView.bounds;
-    genneralVc.title = self.channelList[1];
+    genneralVc.title = [self.homeMainListViewModel.homeMainList[1] tname];
     [self addChildViewController:genneralVc];
     
     UIViewController *vc01 = [[UIViewController alloc] init];
-    vc01.title = self.channelList[2];
+    vc01.title = [self.homeMainListViewModel.homeMainList[2] tname];
     [self addChildViewController:vc01];
     
     UIViewController *vc02 = [[UIViewController alloc] init];
-    vc02.title = self.channelList[3];
+    vc02.title = [self.homeMainListViewModel.homeMainList[3] tname];
     [self addChildViewController:vc02];
     
     UIViewController *vc03 = [[UIViewController alloc] init];
-    vc03.title = self.channelList[4];
+    vc03.title = [self.homeMainListViewModel.homeMainList[4] tname];
     [self addChildViewController:vc03];
     
     UIViewController *vc04 = [[UIViewController alloc] init];
-    vc04.title = self.channelList[5];
+    vc04.title = [self.homeMainListViewModel.homeMainList[5] tname];
     [self addChildViewController:vc04];
     
     UIViewController *vc05 = [[UIViewController alloc] init];
-    vc05.title = self.channelList[6];
+    vc05.title = [self.homeMainListViewModel.homeMainList[6] tname];
     [self addChildViewController:vc05];
     
     self.contentScrollView.contentSize = CGSizeMake(QQ_HOME_SCREEN_WIDTH * self.childViewControllers.count, 0);
@@ -254,17 +270,16 @@
     return _contentScrollView;
 }
 
-- (NSArray *)channelList {
+- (QQHomeMainListViewModel *)homeMainListViewModel {
+    if (_homeMainListViewModel == nil) {
+        _homeMainListViewModel = [[QQHomeMainListViewModel alloc] init];
+    }
+    return _homeMainListViewModel;
+}
+
+- (NSMutableArray *)channelList {
     if (_channelList == nil) {
-        _channelList = @[
-                         @"推荐",
-                         @"常识",
-                         @"智慧",
-                         @"音频",
-                         @"视频",
-                         @"资讯",
-                         @"直播"
-                         ];
+        _channelList = [NSMutableArray array];
     }
     return _channelList;
 }
