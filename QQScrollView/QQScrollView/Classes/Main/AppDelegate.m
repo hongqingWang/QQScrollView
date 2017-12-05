@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "QQHomeViewController.h"
+#import "QQHomeMainController.h"
 
 @interface AppDelegate ()
 
@@ -19,8 +19,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    QQHomeViewController *homeVc = [[QQHomeViewController alloc] init];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:homeVc];
+    QQHomeMainController *homeMainVc = [[QQHomeMainController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:homeMainVc];
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
     
