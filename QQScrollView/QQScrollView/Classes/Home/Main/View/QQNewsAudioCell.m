@@ -8,6 +8,7 @@
 
 #import "QQNewsAudioCell.h"
 #import <Masonry.h>
+#import "UILabel+QQ.h"
 
 @interface QQNewsAudioCell ()
 
@@ -37,9 +38,10 @@
     QQNewsAudioCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (cell == nil) {
         cell = [[QQNewsAudioCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-        UIImageView *imageView = [[UIImageView alloc] init];
-        imageView.image = [UIImage imageNamed:@"qq_news_cell_background_placeholder"];
-        cell.backgroundView = imageView;
+        
+//        UIImageView *imageView = [[UIImageView alloc] init];
+//        imageView.image = [UIImage imageNamed:@"qq_news_cell_background_placeholder"];
+//        cell.backgroundView = imageView;
     }
     return cell;
 }
@@ -57,6 +59,11 @@
         make.height.mas_equalTo(80);
         make.bottom.equalTo(self).offset(-8);
     }];
+    [self.newsTitlelabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self).offset(8);
+        make.left.equalTo(self).offset(16);
+        make.right.equalTo(self.newsImageView.mas_left).offset(-16);
+    }];
 }
 
 #pragma mark - Getters and Setters
@@ -71,9 +78,10 @@
 - (UILabel *)newsTitlelabel {
     if (_newsTitlelabel == nil) {
         _newsTitlelabel = [[UILabel alloc] init];
-        _newsTitlelabel.text = @"视角|一位九旬老人对疾病与死亡的感悟，是否震撼到你？";
+        [_newsTitlelabel qq_setText:@"视角|一位九旬老人对疾病与死亡的感悟，是否震撼到你？对疾病与死亡的感悟" lineSpacing:6];
         _newsTitlelabel.textColor = [UIColor darkGrayColor];
-        _newsTitlelabel.font = [UIFont systemFontOfSize:20];
+        _newsTitlelabel.font = [UIFont systemFontOfSize:16];
+        _newsTitlelabel.numberOfLines = 2;
     }
     return _newsTitlelabel;
 }

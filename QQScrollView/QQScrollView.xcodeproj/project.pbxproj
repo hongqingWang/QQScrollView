@@ -21,6 +21,7 @@
 		04105BDB1FD6A88A00DC3EF3 /* QQNewsVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04105BDA1FD6A88A00DC3EF3 /* QQNewsVideoCell.m */; };
 		04105BE11FD6AA5100DC3EF3 /* QQNewsAudioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04105BE01FD6AA5100DC3EF3 /* QQNewsAudioCell.m */; };
 		04105BE51FD6AA9600DC3EF3 /* QQNewsAudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04105BE41FD6AA9600DC3EF3 /* QQNewsAudioController.m */; };
+		04105BE81FD6BFD400DC3EF3 /* UILabel+QQ.m in Sources */ = {isa = PBXBuildFile; fileRef = 04105BE71FD6BFD400DC3EF3 /* UILabel+QQ.m */; };
 		04EAF5671FD136D3005817DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04EAF5661FD136D3005817DD /* Assets.xcassets */; };
 		04EAF5A91FD13B06005817DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EAF5A51FD13B06005817DD /* main.m */; };
 		04EAF5AA1FD13B06005817DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EAF5A61FD13B06005817DD /* AppDelegate.m */; };
@@ -61,6 +62,8 @@
 		04105BE01FD6AA5100DC3EF3 /* QQNewsAudioCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQNewsAudioCell.m; sourceTree = "<group>"; };
 		04105BE31FD6AA9600DC3EF3 /* QQNewsAudioController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QQNewsAudioController.h; sourceTree = "<group>"; };
 		04105BE41FD6AA9600DC3EF3 /* QQNewsAudioController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQNewsAudioController.m; sourceTree = "<group>"; };
+		04105BE61FD6BFD400DC3EF3 /* UILabel+QQ.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+QQ.h"; sourceTree = "<group>"; };
+		04105BE71FD6BFD400DC3EF3 /* UILabel+QQ.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+QQ.m"; sourceTree = "<group>"; };
 		04EAF55A1FD136D3005817DD /* QQScrollView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QQScrollView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EAF5661FD136D3005817DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04EAF56B1FD136D3005817DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -269,6 +272,8 @@
 		04EAF5A81FD13B06005817DD /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				04105BE61FD6BFD400DC3EF3 /* UILabel+QQ.h */,
+				04105BE71FD6BFD400DC3EF3 /* UILabel+QQ.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -553,6 +558,7 @@
 				04105BB61FD647FF00DC3EF3 /* QQSliderLabel.m in Sources */,
 				04EAF5BF1FD14B06005817DD /* QQRecommendViewController.m in Sources */,
 				04105BD81FD6A74A00DC3EF3 /* QQNewsVideoController.m in Sources */,
+				04105BE81FD6BFD400DC3EF3 /* UILabel+QQ.m in Sources */,
 				04105BE11FD6AA5100DC3EF3 /* QQNewsAudioCell.m in Sources */,
 				04105BBE1FD6508400DC3EF3 /* QQHomeAController.m in Sources */,
 				04EAF5D91FD161CD005817DD /* QQRecommendViewModel.m in Sources */,
