@@ -8,7 +8,6 @@
 
 #import "QQHomeAHeaderView.h"
 #import <SDCycleScrollView.h>
-//#import "QQHomeAController.h"
 
 static CGFloat headerViewHeight = 180;
 
@@ -35,12 +34,15 @@ static CGFloat headerViewHeight = 180;
 - (SDCycleScrollView *)cycleScrollView {
     if (_cycleScrollView == nil) {
         NSArray *array = @[
-                           @"qq_cycle_test",
-                           //                       @"qq_cycle_placeholder",
+                           @"qq_cycle_placeholder",
                            ];
         CGRect frame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
         _cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:frame imageNamesGroup:array];
         _cycleScrollView.backgroundColor = [UIColor whiteColor];
+        _cycleScrollView.autoScrollTimeInterval = 5;
+        _cycleScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
+        _cycleScrollView.currentPageDotImage = [UIImage imageNamed:@"qq_cycle_pagedot_selected"];
+        _cycleScrollView.pageDotImage = [UIImage imageNamed:@"qq_cycle_pagedot"];
     }
     return _cycleScrollView;
 }

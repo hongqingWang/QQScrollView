@@ -11,7 +11,6 @@
 		04105BAB1FD4EBE800DC3EF3 /* QQNetworkManager+News.m in Sources */ = {isa = PBXBuildFile; fileRef = 04105BAA1FD4EBE800DC3EF3 /* QQNetworkManager+News.m */; };
 		04105BB61FD647FF00DC3EF3 /* QQSliderLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04105BB41FD647FF00DC3EF3 /* QQSliderLabel.m */; };
 		04105BB91FD64DB500DC3EF3 /* QQHomeMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04105BB81FD64DB500DC3EF3 /* QQHomeMainController.m */; };
-		04105BBE1FD6508400DC3EF3 /* QQHomeAController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04105BBD1FD6508400DC3EF3 /* QQHomeAController.m */; };
 		04105BC71FD66D5300DC3EF3 /* QQChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04105BC61FD66D5300DC3EF3 /* QQChannel.m */; };
 		04105BC91FD66D7300DC3EF3 /* qq_news_channel.json in Resources */ = {isa = PBXBuildFile; fileRef = 04105BC81FD66D7300DC3EF3 /* qq_news_channel.json */; };
 		04105BCE1FD6870300DC3EF3 /* QQHomeMainListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04105BCD1FD6870300DC3EF3 /* QQHomeMainListViewModel.m */; };
@@ -26,6 +25,7 @@
 		04577C741FD79C4800A0DB29 /* QQHome.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04577C731FD79C4800A0DB29 /* QQHome.xcassets */; };
 		04577C781FD7C01000A0DB29 /* QQHomeBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04577C771FD7C01000A0DB29 /* QQHomeBaseController.m */; };
 		04577C7B1FD7C19900A0DB29 /* QQNewsAudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04577C7A1FD7C19900A0DB29 /* QQNewsAudioController.m */; };
+		04577C7E1FD7D56800A0DB29 /* QQHomeAController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04577C7D1FD7D56800A0DB29 /* QQHomeAController.m */; };
 		04EAF5671FD136D3005817DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04EAF5661FD136D3005817DD /* Assets.xcassets */; };
 		04EAF5A91FD13B06005817DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EAF5A51FD13B06005817DD /* main.m */; };
 		04EAF5AA1FD13B06005817DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EAF5A61FD13B06005817DD /* AppDelegate.m */; };
@@ -47,8 +47,6 @@
 		04105BB51FD647FF00DC3EF3 /* QQSliderLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QQSliderLabel.h; sourceTree = "<group>"; };
 		04105BB71FD64DB500DC3EF3 /* QQHomeMainController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QQHomeMainController.h; sourceTree = "<group>"; };
 		04105BB81FD64DB500DC3EF3 /* QQHomeMainController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQHomeMainController.m; sourceTree = "<group>"; };
-		04105BBC1FD6508400DC3EF3 /* QQHomeAController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QQHomeAController.h; sourceTree = "<group>"; };
-		04105BBD1FD6508400DC3EF3 /* QQHomeAController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQHomeAController.m; sourceTree = "<group>"; };
 		04105BC51FD66D5300DC3EF3 /* QQChannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QQChannel.h; sourceTree = "<group>"; };
 		04105BC61FD66D5300DC3EF3 /* QQChannel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQChannel.m; sourceTree = "<group>"; };
 		04105BC81FD66D7300DC3EF3 /* qq_news_channel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = qq_news_channel.json; sourceTree = "<group>"; };
@@ -76,6 +74,8 @@
 		04577C771FD7C01000A0DB29 /* QQHomeBaseController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQHomeBaseController.m; sourceTree = "<group>"; };
 		04577C791FD7C19900A0DB29 /* QQNewsAudioController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QQNewsAudioController.h; sourceTree = "<group>"; };
 		04577C7A1FD7C19900A0DB29 /* QQNewsAudioController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQNewsAudioController.m; sourceTree = "<group>"; };
+		04577C7C1FD7D56800A0DB29 /* QQHomeAController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QQHomeAController.h; sourceTree = "<group>"; };
+		04577C7D1FD7D56800A0DB29 /* QQHomeAController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQHomeAController.m; sourceTree = "<group>"; };
 		04EAF55A1FD136D3005817DD /* QQScrollView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QQScrollView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EAF5661FD136D3005817DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04EAF56B1FD136D3005817DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -142,8 +142,8 @@
 		04105BBB1FD6506D00DC3EF3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				04105BBC1FD6508400DC3EF3 /* QQHomeAController.h */,
-				04105BBD1FD6508400DC3EF3 /* QQHomeAController.m */,
+				04577C7C1FD7D56800A0DB29 /* QQHomeAController.h */,
+				04577C7D1FD7D56800A0DB29 /* QQHomeAController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -580,6 +580,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04577C7E1FD7D56800A0DB29 /* QQHomeAController.m in Sources */,
 				04EAF5DC1FD161D9005817DD /* QQRecommend.m in Sources */,
 				04105BC71FD66D5300DC3EF3 /* QQChannel.m in Sources */,
 				04EAF5D61FD161C3005817DD /* QQRecommendListViewModel.m in Sources */,
@@ -591,7 +592,6 @@
 				04105BD81FD6A74A00DC3EF3 /* QQNewsVideoController.m in Sources */,
 				04105BE81FD6BFD400DC3EF3 /* UILabel+QQ.m in Sources */,
 				04105BE11FD6AA5100DC3EF3 /* QQNewsAudioCell.m in Sources */,
-				04105BBE1FD6508400DC3EF3 /* QQHomeAController.m in Sources */,
 				04EAF5D91FD161CD005817DD /* QQRecommendViewModel.m in Sources */,
 				04577C781FD7C01000A0DB29 /* QQHomeBaseController.m in Sources */,
 				04105BD11FD6988800DC3EF3 /* QQHomeTableView.m in Sources */,

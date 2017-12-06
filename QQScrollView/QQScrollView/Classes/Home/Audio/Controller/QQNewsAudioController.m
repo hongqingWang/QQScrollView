@@ -29,16 +29,7 @@
     NSLog(@"Audio");
     sleep(3);
     [self.tableView.mj_header endRefreshing];
-//    UITableView *tableView =
-//    [self.tableView.mj_header endRefreshing];
 }
-//- (void)loadData {
-//
-//    NSLog(@"aaaaa");
-//    self load
-//    sleep(5);
-//    [self.tableView.mj_header endRefreshing];
-//}
 
 - (void)loadMoreData {
     

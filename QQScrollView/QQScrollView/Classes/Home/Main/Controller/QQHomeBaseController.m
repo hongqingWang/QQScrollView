@@ -18,12 +18,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self setupUI];
+    [self setupBaseUI];
 //    [self loadData];
 }
 
 #pragma mark - SetupUI
-- (void)setupUI {
+- (void)setupBaseUI {
     
     [self.view addSubview:self.tableView];
     
@@ -35,17 +35,14 @@
 #pragma mark - Load Data
 - (void)loadNewData {
     
-    NSLog(@"aaaaa");
-    
-    sleep(5);
+    sleep(1);
     [self.tableView.mj_header endRefreshing];
 }
 
 - (void)loadMoreData {
     
     [self.tableView.mj_footer beginRefreshing];
-    NSLog(@"loadMoreData");
-    sleep(2);
+    sleep(1);
     [self.tableView.mj_footer endRefreshing];
 }
 
@@ -69,6 +66,7 @@
         _tableView = [[UITableView alloc] initWithFrame:frame style:UITableViewStylePlain];
         _tableView.dataSource = self;
         _tableView.delegate = self;
+        _tableView.tableFooterView = [[UIView alloc] init];
     }
     return _tableView;
 }

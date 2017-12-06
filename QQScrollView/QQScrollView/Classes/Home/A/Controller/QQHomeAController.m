@@ -2,20 +2,17 @@
 //  QQHomeAController.m
 //  QQScrollView
 //
-//  Created by Mac on 05/12/2017.
+//  Created by Mac on 06/12/2017.
 //  Copyright © 2017 Mac. All rights reserved.
 //
 
 #import "QQHomeAController.h"
-#import "QQHomeTableView.h"
 #import "QQHomeAHeaderView.h"
 #import "QQHomeAaCell.h"
 #import <SDCycleScrollView.h>
 
-@interface QQHomeAController ()<UITableViewDataSource, UITableViewDelegate>
+@interface QQHomeAController ()
 
-/// TableView
-@property (nonatomic, strong) QQHomeTableView *tableView;
 /// TableHeaderView
 @property (nonatomic, strong) QQHomeAHeaderView *headerView;
 
@@ -27,37 +24,31 @@
     [super viewDidLoad];
     
     [self setupUI];
-    [self loadData];
+    [self loadBannerData];
 }
 
 #pragma mark - Load Data
-- (void)loadData {
+/**
+ * loadBannerData
+ */
+- (void)loadBannerData {
     
     NSArray *array = @[
                        @"qq_cycle_test",
                        @"qq_cycle_placeholder",
                        ];
+    NSArray *titleArray = @[
+                            @"第一张图片",
+                            @"第二张图片"
+                            ];
     self.headerView.cycleScrollView.imageURLStringsGroup = array;
+    self.headerView.cycleScrollView.titlesGroup = titleArray;
 }
 
 #pragma mark - SetupUI
 - (void)setupUI {
     
-    [self.view addSubview:self.tableView];
     self.tableView.tableHeaderView = self.headerView;
-    
-    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
-    [self.tableView.mj_header beginRefreshing];
-//    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
-//    [self.tableView addSubview:refreshControl];
-}
-
-- (void)loadNewData {
-    
-    NSLog(@"aaaaa");
-    
-    sleep(5);
-    [self.tableView.mj_header endRefreshing];
 }
 
 #pragma mark - UITableViewDataSource
@@ -74,26 +65,9 @@
     return cell;
 }
 
-#pragma mark - UITableViewDelegate
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-//
-//    QQHomeAHeaderView *headerView = [QQHomeAHeaderView qq_homeAHeaderViewWithTableView:tableView];
-//
-//    headerView.backgroundColor = [UIColor redColor];
-//
-//    return headerView;
-//}
+
 
 #pragma mark - Getters and Setters
-- (QQHomeTableView *)tableView {
-    if (_tableView == nil) {
-        _tableView = [[QQHomeTableView alloc] init];
-        _tableView.dataSource = self;
-        _tableView.delegate = self;
-    }
-    return _tableView;
-}
-
 - (QQHomeAHeaderView *)headerView {
     if (_headerView == nil) {
         _headerView = [[QQHomeAHeaderView alloc] init];
