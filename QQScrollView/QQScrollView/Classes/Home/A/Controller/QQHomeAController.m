@@ -45,6 +45,8 @@
     
     [self.view addSubview:self.tableView];
     self.tableView.tableHeaderView = self.headerView;
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [self.tableView addSubview:refreshControl];
 }
 
 #pragma mark - UITableViewDataSource
