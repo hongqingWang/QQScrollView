@@ -15,6 +15,8 @@
 
 /// TableView
 @property (nonatomic, strong) QQHomeTableView *tableView;
+/// TableHeaderView
+@property (nonatomic, strong) QQHomeAHeaderView *headerView;
 
 @end
 
@@ -24,13 +26,13 @@
     [super viewDidLoad];
     
     [self setupUI];
-    self.tableView.tableHeaderView = [[QQHomeAHeaderView alloc] init];
 }
 
 #pragma mark - SetupUI
 - (void)setupUI {
     
     [self.view addSubview:self.tableView];
+    self.tableView.tableHeaderView = self.headerView;
 }
 
 #pragma mark - UITableViewDataSource
@@ -65,6 +67,13 @@
         _tableView.delegate = self;
     }
     return _tableView;
+}
+
+- (QQHomeAHeaderView *)headerView {
+    if (_headerView == nil) {
+        _headerView = [[QQHomeAHeaderView alloc] init];
+    }
+    return _headerView;
 }
 
 @end

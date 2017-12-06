@@ -182,10 +182,10 @@
 		04577C691FD7874400A0DB29 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				04577C6A1FD7878000A0DB29 /* QQHomeAaCell.h */,
-				04577C6B1FD7878000A0DB29 /* QQHomeAaCell.m */,
 				04577C701FD78AB300A0DB29 /* QQHomeAHeaderView.h */,
 				04577C711FD78AB300A0DB29 /* QQHomeAHeaderView.m */,
+				04577C6A1FD7878000A0DB29 /* QQHomeAaCell.h */,
+				04577C6B1FD7878000A0DB29 /* QQHomeAaCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
