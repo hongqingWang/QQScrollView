@@ -2,18 +2,14 @@
 //  QQNewsAudioController.m
 //  QQScrollView
 //
-//  Created by Mac on 05/12/2017.
+//  Created by Mac on 06/12/2017.
 //  Copyright © 2017 Mac. All rights reserved.
 //
 
 #import "QQNewsAudioController.h"
-#import "QQHomeTableView.h"
 #import "QQNewsAudioCell.h"
 
-@interface QQNewsAudioController ()<UITableViewDataSource, UITableViewDelegate>
-
-/// TableView
-@property (nonatomic, strong) QQHomeTableView *tableView;
+@interface QQNewsAudioController ()
 
 @end
 
@@ -21,14 +17,33 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // Do any additional setup after loading the view.
+//    self.tableView.
+    NSLog(@"%@", self.view.subviews);
     
-    [self setupUI];
 }
 
-#pragma mark - SetupUI
-- (void)setupUI {
+#pragma mark - Load Data
+- (void)loadNewData {
     
-    [self.view addSubview:self.tableView];
+    NSLog(@"Audio");
+    sleep(3);
+    [self.tableView.mj_header endRefreshing];
+//    UITableView *tableView =
+//    [self.tableView.mj_header endRefreshing];
+}
+//- (void)loadData {
+//
+//    NSLog(@"aaaaa");
+//    self load
+//    sleep(5);
+//    [self.tableView.mj_header endRefreshing];
+//}
+
+- (void)loadMoreData {
+    
+    sleep(2);
+    [self.tableView.mj_footer endRefreshingWithNoMoreData];
 }
 
 #pragma mark - UITableViewDataSource
@@ -40,18 +55,6 @@
     
     QQNewsAudioCell *cell = [QQNewsAudioCell qq_newsAudioCellWithTableView:tableView];
     return cell;
-}
-
-#pragma mark - Getters and Setters
-- (QQHomeTableView *)tableView {
-    if (_tableView == nil) {
-        _tableView = [[QQHomeTableView alloc] init];
-        _tableView.dataSource = self;
-        _tableView.delegate = self;
-        _tableView.estimatedRowHeight = 200;
-        _tableView.rowHeight = UITableViewAutomaticDimension;
-    }
-    return _tableView;
 }
 
 @end

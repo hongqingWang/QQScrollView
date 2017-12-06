@@ -8,5 +8,6 @@ pod 'MJExtension'
 pod 'SDWebImage'
 pod 'Masonry'
 pod 'SDCycleScrollView'                     # 轮播图
+pod 'MJRefresh'                             # 刷新控件
 
 end

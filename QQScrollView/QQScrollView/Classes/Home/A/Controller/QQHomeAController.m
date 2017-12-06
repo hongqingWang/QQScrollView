@@ -45,8 +45,19 @@
     
     [self.view addSubview:self.tableView];
     self.tableView.tableHeaderView = self.headerView;
-    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
-    [self.tableView addSubview:refreshControl];
+    
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    [self.tableView.mj_header beginRefreshing];
+//    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+//    [self.tableView addSubview:refreshControl];
+}
+
+- (void)loadNewData {
+    
+    NSLog(@"aaaaa");
+    
+    sleep(5);
+    [self.tableView.mj_header endRefreshing];
 }
 
 #pragma mark - UITableViewDataSource
