@@ -24,6 +24,7 @@
 		04105BE81FD6BFD400DC3EF3 /* UILabel+QQ.m in Sources */ = {isa = PBXBuildFile; fileRef = 04105BE71FD6BFD400DC3EF3 /* UILabel+QQ.m */; };
 		04577C6C1FD7878000A0DB29 /* QQHomeAaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04577C6B1FD7878000A0DB29 /* QQHomeAaCell.m */; };
 		04577C721FD78AB300A0DB29 /* QQHomeAHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04577C711FD78AB300A0DB29 /* QQHomeAHeaderView.m */; };
+		04577C741FD79C4800A0DB29 /* QQHome.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04577C731FD79C4800A0DB29 /* QQHome.xcassets */; };
 		04EAF5671FD136D3005817DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04EAF5661FD136D3005817DD /* Assets.xcassets */; };
 		04EAF5A91FD13B06005817DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EAF5A51FD13B06005817DD /* main.m */; };
 		04EAF5AA1FD13B06005817DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EAF5A61FD13B06005817DD /* AppDelegate.m */; };
@@ -70,6 +71,7 @@
 		04577C6B1FD7878000A0DB29 /* QQHomeAaCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQHomeAaCell.m; sourceTree = "<group>"; };
 		04577C701FD78AB300A0DB29 /* QQHomeAHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QQHomeAHeaderView.h; sourceTree = "<group>"; };
 		04577C711FD78AB300A0DB29 /* QQHomeAHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQHomeAHeaderView.m; sourceTree = "<group>"; };
+		04577C731FD79C4800A0DB29 /* QQHome.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = QQHome.xcassets; sourceTree = "<group>"; };
 		04EAF55A1FD136D3005817DD /* QQScrollView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QQScrollView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EAF5661FD136D3005817DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04EAF56B1FD136D3005817DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				04EAF5B11FD14AA7005817DD /* Video */,
 				04EAF5AE1FD14AA7005817DD /* Live */,
 				04105BA71FD4E3B700DC3EF3 /* QQNews.xcassets */,
+				04577C731FD79C4800A0DB29 /* QQHome.xcassets */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 			files = (
 				04105BA81FD4E3B700DC3EF3 /* QQNews.xcassets in Resources */,
 				04105BC91FD66D7300DC3EF3 /* qq_news_channel.json in Resources */,
+				04577C741FD79C4800A0DB29 /* QQHome.xcassets in Resources */,
 				04EAF5671FD136D3005817DD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,5 +7,6 @@ pod 'AFNetworking'
 pod 'MJExtension'
 pod 'SDWebImage'
 pod 'Masonry'
+pod 'SDCycleScrollView'                     # 轮播图
 
 end
