@@ -26,6 +26,9 @@
 		04577C781FD7C01000A0DB29 /* QQHomeBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04577C771FD7C01000A0DB29 /* QQHomeBaseController.m */; };
 		04577C7B1FD7C19900A0DB29 /* QQNewsAudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04577C7A1FD7C19900A0DB29 /* QQNewsAudioController.m */; };
 		04577C7E1FD7D56800A0DB29 /* QQHomeAController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04577C7D1FD7D56800A0DB29 /* QQHomeAController.m */; };
+		04577C841FD7EE6700A0DB29 /* QQHomeWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04577C831FD7EE6700A0DB29 /* QQHomeWebViewController.m */; };
+		04577C891FD7F62000A0DB29 /* MBProgressHUD+QQ.m in Sources */ = {isa = PBXBuildFile; fileRef = 04577C871FD7F62000A0DB29 /* MBProgressHUD+QQ.m */; };
+		04577C8A1FD7F62000A0DB29 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 04577C881FD7F62000A0DB29 /* MBProgressHUD.bundle */; };
 		04EAF5671FD136D3005817DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04EAF5661FD136D3005817DD /* Assets.xcassets */; };
 		04EAF5A91FD13B06005817DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EAF5A51FD13B06005817DD /* main.m */; };
 		04EAF5AA1FD13B06005817DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EAF5A61FD13B06005817DD /* AppDelegate.m */; };
@@ -76,6 +79,11 @@
 		04577C7A1FD7C19900A0DB29 /* QQNewsAudioController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQNewsAudioController.m; sourceTree = "<group>"; };
 		04577C7C1FD7D56800A0DB29 /* QQHomeAController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QQHomeAController.h; sourceTree = "<group>"; };
 		04577C7D1FD7D56800A0DB29 /* QQHomeAController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQHomeAController.m; sourceTree = "<group>"; };
+		04577C821FD7EE6700A0DB29 /* QQHomeWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QQHomeWebViewController.h; sourceTree = "<group>"; };
+		04577C831FD7EE6700A0DB29 /* QQHomeWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQHomeWebViewController.m; sourceTree = "<group>"; };
+		04577C861FD7F62000A0DB29 /* MBProgressHUD+QQ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+QQ.h"; sourceTree = "<group>"; };
+		04577C871FD7F62000A0DB29 /* MBProgressHUD+QQ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+QQ.m"; sourceTree = "<group>"; };
+		04577C881FD7F62000A0DB29 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
 		04EAF55A1FD136D3005817DD /* QQScrollView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QQScrollView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EAF5661FD136D3005817DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04EAF56B1FD136D3005817DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -144,6 +152,8 @@
 			children = (
 				04577C7C1FD7D56800A0DB29 /* QQHomeAController.h */,
 				04577C7D1FD7D56800A0DB29 /* QQHomeAController.m */,
+				04577C821FD7EE6700A0DB29 /* QQHomeWebViewController.h */,
+				04577C831FD7EE6700A0DB29 /* QQHomeWebViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -194,6 +204,16 @@
 				04577C6B1FD7878000A0DB29 /* QQHomeAaCell.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		04577C851FD7F62000A0DB29 /* QQProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				04577C861FD7F62000A0DB29 /* MBProgressHUD+QQ.h */,
+				04577C871FD7F62000A0DB29 /* MBProgressHUD+QQ.m */,
+				04577C881FD7F62000A0DB29 /* MBProgressHUD.bundle */,
+			);
+			path = QQProgressHUD;
 			sourceTree = "<group>";
 		};
 		04EAF5511FD136D3005817DD = {
@@ -288,6 +308,7 @@
 		04EAF5A71FD13B06005817DD /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				04577C851FD7F62000A0DB29 /* QQProgressHUD */,
 				04EAF5C41FD159EE005817DD /* NetWork */,
 				04EAF5A81FD13B06005817DD /* Category */,
 				04577C751FD7BDBE00A0DB29 /* QQScrollView.h */,
@@ -514,6 +535,7 @@
 			files = (
 				04105BA81FD4E3B700DC3EF3 /* QQNews.xcassets in Resources */,
 				04105BC91FD66D7300DC3EF3 /* qq_news_channel.json in Resources */,
+				04577C8A1FD7F62000A0DB29 /* MBProgressHUD.bundle in Resources */,
 				04577C741FD79C4800A0DB29 /* QQHome.xcassets in Resources */,
 				04EAF5671FD136D3005817DD /* Assets.xcassets in Resources */,
 			);
@@ -589,9 +611,11 @@
 				04105BB91FD64DB500DC3EF3 /* QQHomeMainController.m in Sources */,
 				04105BB61FD647FF00DC3EF3 /* QQSliderLabel.m in Sources */,
 				04EAF5BF1FD14B06005817DD /* QQRecommendViewController.m in Sources */,
+				04577C891FD7F62000A0DB29 /* MBProgressHUD+QQ.m in Sources */,
 				04105BD81FD6A74A00DC3EF3 /* QQNewsVideoController.m in Sources */,
 				04105BE81FD6BFD400DC3EF3 /* UILabel+QQ.m in Sources */,
 				04105BE11FD6AA5100DC3EF3 /* QQNewsAudioCell.m in Sources */,
+				04577C841FD7EE6700A0DB29 /* QQHomeWebViewController.m in Sources */,
 				04EAF5D91FD161CD005817DD /* QQRecommendViewModel.m in Sources */,
 				04577C781FD7C01000A0DB29 /* QQHomeBaseController.m in Sources */,
 				04105BD11FD6988800DC3EF3 /* QQHomeTableView.m in Sources */,
