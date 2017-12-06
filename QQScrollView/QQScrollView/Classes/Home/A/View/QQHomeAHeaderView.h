@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class SDCycleScrollView;
 
 @interface QQHomeAHeaderView : UIView
+
+/// Banner
+@property (nonatomic, strong) SDCycleScrollView *cycleScrollView ;
 
 @end

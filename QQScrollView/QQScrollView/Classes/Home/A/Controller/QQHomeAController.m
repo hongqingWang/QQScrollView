@@ -10,6 +10,7 @@
 #import "QQHomeTableView.h"
 #import "QQHomeAHeaderView.h"
 #import "QQHomeAaCell.h"
+#import <SDCycleScrollView.h>
 
 @interface QQHomeAController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -26,6 +27,17 @@
     [super viewDidLoad];
     
     [self setupUI];
+    [self loadData];
+}
+
+#pragma mark - Load Data
+- (void)loadData {
+    
+    NSArray *array = @[
+                       @"qq_cycle_test",
+                       @"qq_cycle_placeholder",
+                       ];
+    self.headerView.cycleScrollView.imageURLStringsGroup = array;
 }
 
 #pragma mark - SetupUI
