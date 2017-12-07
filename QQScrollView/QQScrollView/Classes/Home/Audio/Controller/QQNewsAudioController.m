@@ -38,8 +38,12 @@
 }
 
 #pragma mark - UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 3;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -47,5 +51,8 @@
     QQNewsAudioCell *cell = [QQNewsAudioCell qq_newsAudioCellWithTableView:tableView];
     return cell;
 }
+
+#pragma mark - UITableViewDelegate
+
 
 @end

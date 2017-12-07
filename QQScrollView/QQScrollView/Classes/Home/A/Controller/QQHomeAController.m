@@ -14,8 +14,8 @@
 #import "QQHomeListViewModel.h"
 #import "QQHomeViewModel.h"
 #import "QQHomeA.h"
-
 #import "QQHomeAbCell.h"
+#import "QQHomeAcCell.h"
 
 @interface QQHomeAController ()<SDCycleScrollViewDelegate, QQHomeAaCellDelegate, QQHomeAbCellDelegate>
 
@@ -122,19 +122,31 @@
 }
 
 #pragma mark - UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 5;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    if (section == 0) {
+        return 1;
+    } else if (section == 1) {
+        return 1;
+    } else if (section == 2) {
+        return 1;
+    } else {
+        return 10;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (indexPath.row == 0) {
+    if (indexPath.section == 0) {
         
         QQHomeAaCell *cell = [QQHomeAaCell qq_homeAaCellWithTableView:tableView viewModelArray:self.homeListViewModel.itemList];
         cell.delegate = self;
         return cell;
         
-    } else if (indexPath.row == 1) {
+    } else if (indexPath.section == 1) {
         
         QQHomeAbCell *cell = [QQHomeAbCell qq_homeAbCellWithTableView:tableView];
         cell.delegate = self;
@@ -144,6 +156,14 @@
                                 @"掌中佛3.0上线了！"
                                 ];
         cell.notiCycleScrollView.titlesGroup = titleArray;
+        return cell;
+        
+    } else if (indexPath.section == 2) {
+      
+        QQHomeAcCell *cell = [QQHomeAcCell qq_homeAcCellWithTableView:tableView];
+        
+        
+        
         return cell;
         
     } else {
@@ -157,7 +177,7 @@
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (indexPath.row == 0) {
+    if (indexPath.section == 0) {
         
         if (self.homeListViewModel.itemList.count <= 4) {
             return 100;
@@ -165,9 +185,9 @@
             return 200;
         }
         
-    } else if (indexPath.row == 1) {
+    } else if (indexPath.section == 1) {
         return 44;
-    } else if (indexPath.row == 2) {
+    } else if (indexPath.section == 2) {
         return 200;
     } else {
         return 44;

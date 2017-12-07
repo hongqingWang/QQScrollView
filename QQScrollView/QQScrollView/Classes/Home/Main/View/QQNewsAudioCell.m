@@ -16,6 +16,8 @@
 @property (nonatomic, strong) UIImageView *newsImageView;
 /// 标题
 @property (nonatomic, strong) UILabel *newsTitlelabel;
+/// Cell
+@property (nonatomic, strong) UIView *carve;
 
 @end
 
@@ -51,6 +53,7 @@
     
     [self addSubview:self.newsImageView];
     [self addSubview:self.newsTitlelabel];
+    [self addSubview:self.carve];
     
     [self.newsImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self).offset(8);
@@ -63,6 +66,12 @@
         make.top.equalTo(self).offset(8);
         make.left.equalTo(self).offset(16);
         make.right.equalTo(self.newsImageView.mas_left).offset(-16);
+    }];
+    [self.carve mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self).offset(16);
+        make.right.equalTo(self);
+        make.bottom.equalTo(self);
+        make.height.mas_equalTo(0.3);
     }];
 }
 
@@ -84,6 +93,14 @@
         _newsTitlelabel.numberOfLines = 2;
     }
     return _newsTitlelabel;
+}
+
+- (UIView *)carve {
+    if (_carve == nil) {
+        _carve = [[UIView alloc] init];
+        _carve.backgroundColor = [UIColor lightGrayColor];
+    }
+    return _carve;
 }
 
 @end

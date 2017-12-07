@@ -19,7 +19,6 @@
     [super viewDidLoad];
     
     [self setupBaseUI];
-//    [self loadData];
 }
 
 #pragma mark - SetupUI
@@ -57,16 +56,20 @@
     return cell;
 }
 
+
 #pragma mark - UITableViewDelegate
 
 #pragma mark - Getters and Setters
 - (UITableView *)tableView {
     if (_tableView == nil) {
         CGRect frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 64 - 30 - 49);
-        _tableView = [[UITableView alloc] initWithFrame:frame style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc] initWithFrame:frame style:UITableViewStyleGrouped];
         _tableView.dataSource = self;
         _tableView.delegate = self;
-        _tableView.tableFooterView = [[UIView alloc] init];
+        _tableView.sectionHeaderHeight = 0;
+        _tableView.sectionFooterHeight = 0;
+        _tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 0.1)];
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
     return _tableView;
 }

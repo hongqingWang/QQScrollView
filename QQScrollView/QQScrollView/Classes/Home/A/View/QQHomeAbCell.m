@@ -86,6 +86,7 @@ static CGFloat const notiCellHeight = 44;
         _notiCycleScrollView.titleLabelBackgroundColor = [UIColor clearColor];
         _notiCycleScrollView.titleLabelTextColor = [UIColor darkGrayColor];
         _notiCycleScrollView.scrollDirection = UICollectionViewScrollDirectionVertical;
+        [_notiCycleScrollView disableScrollGesture];
     }
     return _notiCycleScrollView;
 }
