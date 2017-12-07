@@ -1,5 +1,5 @@
 //
-//  QQAViewModel.h
+//  QQHomeViewModel.h
 //  QQScrollView
 //
 //  Created by Mac on 07/12/2017.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 @class QQHomeA;
 
-@interface QQAViewModel : NSObject
+@interface QQHomeViewModel : NSObject
 
 /// 模型
 @property (nonatomic, strong) QQHomeA *homeA;

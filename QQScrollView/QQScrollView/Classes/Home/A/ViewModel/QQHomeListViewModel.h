@@ -1,5 +1,5 @@
 //
-//  QQAListViewModel.h
+//  QQHomeListViewModel.h
 //  QQScrollView
 //
 //  Created by Mac on 07/12/2017.
@@ -8,14 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface QQAListViewModel : NSObject
+@interface QQHomeListViewModel : NSObject
 
 /// ItemList
 @property (nonatomic, strong) NSMutableArray *itemList;
 
 /**
  加载`ItemList`
-
+ 
  @param completion completion
  */
 - (void)loadItemListCompletion:(void (^)(BOOL isSuccessed))completion;

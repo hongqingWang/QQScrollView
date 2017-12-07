@@ -1,29 +1,29 @@
 //
-//  QQAListViewModel.m
+//  QQHomeListViewModel.m
 //  QQScrollView
 //
 //  Created by Mac on 07/12/2017.
 //  Copyright © 2017 Mac. All rights reserved.
 //
 
-#import "QQAListViewModel.h"
+#import "QQHomeListViewModel.h"
 #import "QQHomeA.h"
-#import "QQAViewModel.h"
+#import "QQHomeViewModel.h"
 
-@implementation QQAListViewModel
+@implementation QQHomeListViewModel
 
 - (void)loadItemListCompletion:(void (^)(BOOL))completion {
     
     NSString *path = [[NSBundle mainBundle] pathForResource:@"qq_item_list.json" ofType:nil];
     NSData *data = [NSData dataWithContentsOfFile:path];
     NSArray *dictArray = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
-    NSLog(@"%s %@", __FUNCTION__, dictArray);
+//    NSLog(@"%s %@", __FUNCTION__, dictArray);
     
     NSMutableArray *arrayM = [NSMutableArray arrayWithCapacity:dictArray.count];
     
     for (NSDictionary *dict in dictArray) {
         QQHomeA *homeA = [QQHomeA mj_objectWithKeyValues:dict];
-        [arrayM addObject:[QQAViewModel viewModelWithHomeA:homeA]];
+        [arrayM addObject:[QQHomeViewModel viewModelWithHomeA:homeA]];
     }
     
     [self.itemList addObjectsFromArray:arrayM];

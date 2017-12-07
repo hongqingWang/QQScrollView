@@ -7,47 +7,50 @@
 //
 
 #import "QQHomeAaCell.h"
+#import "QQHomeViewModel.h"
+#import "QQHomeA.h"
 
 static CGFloat const kHomeAaCellMaxHeight = 200;
 
-@interface QQHomeAaCell ()
-
-@end
-
 @implementation QQHomeAaCell
 
-+ (instancetype)qq_homeAaCellWithTableView:(UITableView *)tableView itemCount:(NSInteger)itemCount {
++ (instancetype)qq_homeAaCellWithTableView:(UITableView *)tableView viewModelArray:(NSArray *)viewModelArray {
     
     static NSString *ID = @"QQHomeAaCell";
     
     QQHomeAaCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (cell == nil) {
-        cell = [[QQHomeAaCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID itemCount:itemCount];
+        cell = [[QQHomeAaCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID viewModelArray:viewModelArray];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return cell;
 }
 
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier itemCount:(NSInteger)itemCount {
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier viewModelArray:(NSArray *)viewModelArray {
     
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     
     if (self) {
         
-        [self setupUIWithItemCount:itemCount];
+        [self setupUIWithViewModelArray:viewModelArray];
     }
     return self;
 }
 
 #pragma mark - SetupUI
-- (void)setupUIWithItemCount:(NSInteger)itemCount {
+- (void)setupUIWithViewModelArray:(NSArray *)viewModelArray {
     
     int colmns = 4;
     CGFloat itemW = [UIScreen mainScreen].bounds.size.width / colmns;
     CGFloat itemH = 0;
     itemH = kHomeAaCellMaxHeight / 2;
     
-    for (int i = 0; i < itemCount; i++) {
+    QQHomeViewModel *viewModel = [[QQHomeViewModel alloc] init];
+    
+    for (int i = 0; i < viewModelArray.count; i++) {
+        
+        viewModel = viewModelArray[i];
+        NSLog(@"%s %@", __FUNCTION__, viewModel.homeA.title);
         
         int row = i / colmns;
         int col = i % colmns;
@@ -57,8 +60,39 @@ static CGFloat const kHomeAaCellMaxHeight = 200;
         
         UIView *backGroundView = [[UIView alloc] init];
         backGroundView.frame = CGRectMake(itemX, itemY, itemW, itemH);
-        backGroundView.backgroundColor = [UIColor qq_randomColor];
         [self addSubview:backGroundView];
+        
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
+        backGroundView.tag = i;
+        [backGroundView addGestureRecognizer:tap];
+        
+        UIImageView *imageView = [[UIImageView alloc] init];
+        [imageView sd_setImageWithURL:[NSURL URLWithString:viewModel.homeA.imgsrc] placeholderImage:[UIImage imageNamed:@"qq_news_placeholder"]];
+        [backGroundView addSubview:imageView];
+        [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(backGroundView);
+            make.top.equalTo(backGroundView).offset(8);
+            make.width.mas_equalTo(50);
+            make.height.mas_equalTo(50);
+        }];
+        
+        UILabel *label = [[UILabel alloc] init];
+        label.text = viewModel.homeA.title;
+        label.textColor = [UIColor lightGrayColor];
+        label.font = [UIFont systemFontOfSize:14];
+        [backGroundView addSubview:label];
+        [label mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(imageView);
+            make.top.equalTo(imageView.mas_bottom).offset(4);
+        }];
+    }
+}
+
+#pragma mark - Event Response
+- (void)tap:(UITapGestureRecognizer *)tap {
+    
+    if ([self.delegate respondsToSelector:@selector(tap:)]) {
+        [self.delegate tap:tap];
     }
 }
 

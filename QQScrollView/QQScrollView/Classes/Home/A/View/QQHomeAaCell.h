@@ -7,9 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+@class QQHomeViewModel;
+
+@protocol QQHomeAaCellDelegate <NSObject>
+
+- (void)tap:(UITapGestureRecognizer *)tap;
+
+@end
 
 @interface QQHomeAaCell : UITableViewCell
 
-+ (instancetype)qq_homeAaCellWithTableView:(UITableView *)tableView itemCount:(NSInteger)itemCount;
+/// Delegate
+@property (nonatomic, weak) id <QQHomeAaCellDelegate> delegate;
+
++ (instancetype)qq_homeAaCellWithTableView:(UITableView *)tableView viewModelArray:(NSArray *)viewModelArray;
 
 @end

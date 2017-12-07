@@ -1,18 +1,18 @@
 //
-//  QQAViewModel.m
+//  QQHomeViewModel.m
 //  QQScrollView
 //
 //  Created by Mac on 07/12/2017.
 //  Copyright © 2017 Mac. All rights reserved.
 //
 
-#import "QQAViewModel.h"
+#import "QQHomeViewModel.h"
 
-@implementation QQAViewModel
+@implementation QQHomeViewModel
 
 + (instancetype)viewModelWithHomeA:(QQHomeA *)homeA {
     
-    QQAViewModel *viewModel = [[self alloc] init];
+    QQHomeViewModel *viewModel = [[self alloc] init];
     viewModel.homeA = homeA;
     return viewModel;
 }

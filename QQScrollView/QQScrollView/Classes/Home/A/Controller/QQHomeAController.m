@@ -11,16 +11,16 @@
 #import "QQHomeAaCell.h"
 #import <SDCycleScrollView.h>
 #import "QQHomeWebViewController.h"
-#import "QQAListViewModel.h"
+#import "QQHomeListViewModel.h"
+#import "QQHomeViewModel.h"
+#import "QQHomeA.h"
 
-@interface QQHomeAController ()<SDCycleScrollViewDelegate>
+@interface QQHomeAController ()<SDCycleScrollViewDelegate, QQHomeAaCellDelegate>
 
 /// TableHeaderView
 @property (nonatomic, strong) QQHomeAHeaderView *headerView;
-/// ItemCount
-@property (nonatomic, assign) NSInteger itemCount;
-/// AListViewModel
-@property (nonatomic, strong) QQAListViewModel *aListViewModel;
+/// QQHomeListViewModel
+@property (nonatomic, strong) QQHomeListViewModel *homeListViewModel;
 
 @end
 
@@ -29,7 +29,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.itemCount = 6;
     [self setupUI];
     [self loadBannerData];
     [self loadItemListData];
@@ -57,11 +56,10 @@
 
 - (void)loadItemListData {
     
-    [self.aListViewModel loadItemListCompletion:^(BOOL isSuccessed) {
+    [self.homeListViewModel loadItemListCompletion:^(BOOL isSuccessed) {
         if (!isSuccessed) {
             NSLog(@"无数据");
         }
-        self.itemCount = self.aListViewModel.itemList.count;
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
         [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
     }];
@@ -100,6 +98,19 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+#pragma mark - QQHomeAaCellDelegate
+/**
+ * `Item`点击事件
+ */
+- (void)tap:(UITapGestureRecognizer *)tap {
+    
+    QQHomeViewModel *viewModel = self.homeListViewModel.itemList[tap.view.tag];
+    QQHomeWebViewController *vc = [[QQHomeWebViewController alloc] init];
+    vc.title = viewModel.homeA.title;
+    vc.urlString = viewModel.homeA.url;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 10;
@@ -109,12 +120,17 @@
     
     if (indexPath.row == 0) {
         
-        QQHomeAaCell *cell = [QQHomeAaCell qq_homeAaCellWithTableView:tableView itemCount:self.itemCount];
+        
+        QQHomeAaCell *cell = [QQHomeAaCell qq_homeAaCellWithTableView:tableView viewModelArray:self.homeListViewModel.itemList];
+        
+        cell.delegate = self;
+        
         return cell;
         
     } else if (indexPath.row == 1) {
         
         UITableViewCell *cell = [[UITableViewCell alloc] init];
+        
         return cell;
         
     } else {
@@ -130,7 +146,7 @@
     
     if (indexPath.row == 0) {
         
-        if (self.itemCount <= 4) {
+        if (self.homeListViewModel.itemList.count <= 4) {
             return 100;
         } else {
             return 200;
@@ -153,11 +169,11 @@
     return _headerView;
 }
 
-- (QQAListViewModel *)aListViewModel {
-    if (_aListViewModel == nil) {
-        _aListViewModel = [[QQAListViewModel alloc] init];
+- (QQHomeListViewModel *)homeListViewModel {
+    if (_homeListViewModel == nil) {
+        _homeListViewModel = [[QQHomeListViewModel alloc] init];
     }
-    return _aListViewModel;
+    return _homeListViewModel;
 }
 
 @end
