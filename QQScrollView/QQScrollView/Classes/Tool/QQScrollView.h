@@ -7,5 +7,7 @@
 //
 
 #import <MJRefresh.h>
+#import <MJExtension.h>
 #import "MBProgressHUD+QQ.h"
 #import "UIColor+QQ.h"
+

@@ -17,7 +17,7 @@
     NSString *path = [[NSBundle mainBundle] pathForResource:@"qq_news_channel.json" ofType:nil];
     NSData *data = [NSData dataWithContentsOfFile:path];
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
-//    NSLog(@"-=-=%@", dict[dict.keyEnumerator.nextObject]);
+    NSLog(@"-=-=%@", dict[dict.keyEnumerator.nextObject]);
     self.homeMainList = [QQChannel mj_objectArrayWithKeyValuesArray:dict[dict.keyEnumerator.nextObject]];
     completion(self.homeMainList);
 }

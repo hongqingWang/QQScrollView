@@ -11,6 +11,7 @@
 #import "QQHomeAaCell.h"
 #import <SDCycleScrollView.h>
 #import "QQHomeWebViewController.h"
+#import "QQAListViewModel.h"
 
 @interface QQHomeAController ()<SDCycleScrollViewDelegate>
 
@@ -18,6 +19,8 @@
 @property (nonatomic, strong) QQHomeAHeaderView *headerView;
 /// ItemCount
 @property (nonatomic, assign) NSInteger itemCount;
+/// AListViewModel
+@property (nonatomic, strong) QQAListViewModel *aListViewModel;
 
 @end
 
@@ -29,6 +32,7 @@
     self.itemCount = 6;
     [self setupUI];
     [self loadBannerData];
+    [self loadItemListData];
 }
 
 #pragma mark - Load Data
@@ -50,6 +54,28 @@
     self.headerView.cycleScrollView.imageURLStringsGroup = imageArray;
     self.headerView.cycleScrollView.titlesGroup = titleArray;
 }
+
+- (void)loadItemListData {
+    
+    [self.aListViewModel loadItemListCompletion:^(BOOL isSuccessed) {
+        if (!isSuccessed) {
+            NSLog(@"无数据");
+        }
+        self.itemCount = self.aListViewModel.itemList.count;
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+    }];
+}
+
+//- (void)loadNewData {
+//
+////    self.itemCount = 7;
+////
+////    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+////    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+////
+////    [self.tableView.mj_header endRefreshing];
+//}
 
 #pragma mark - SetupUI
 - (void)setupUI {
@@ -125,6 +151,13 @@
         _headerView = [[QQHomeAHeaderView alloc] init];
     }
     return _headerView;
+}
+
+- (QQAListViewModel *)aListViewModel {
+    if (_aListViewModel == nil) {
+        _aListViewModel = [[QQAListViewModel alloc] init];
+    }
+    return _aListViewModel;
 }
 
 @end
