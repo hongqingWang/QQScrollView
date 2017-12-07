@@ -10,6 +10,16 @@
 
 @implementation QQNewsVideoCell
 
++ (instancetype)qq_newsVideoCellWithTableView:(UITableView *)tableView {
+    
+    static NSString *ID = @"QQNewsVideoCell";
+    QQNewsVideoCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    if (cell == nil) {
+        cell = [[QQNewsVideoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+    }
+    return cell;
+}
+
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -19,16 +29,6 @@
         [self setupUI];
     }
     return self;
-}
-
-+ (instancetype)qq_newsVideoCellWithTableView:(UITableView *)tableView {
-    
-    static NSString *ID = @"QQNewsVideoCell";
-    QQNewsVideoCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (cell == nil) {
-        cell = [[QQNewsVideoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-    }
-    return cell;
 }
 
 #pragma mark - SetupUI

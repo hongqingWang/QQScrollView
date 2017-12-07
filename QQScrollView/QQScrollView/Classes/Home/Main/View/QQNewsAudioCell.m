@@ -21,6 +21,20 @@
 
 @implementation QQNewsAudioCell
 
++ (instancetype)qq_newsAudioCellWithTableView:(UITableView *)tableView {
+    
+    static NSString *ID = @"QQNewsAudioCell";
+    QQNewsAudioCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    if (cell == nil) {
+        cell = [[QQNewsAudioCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+        
+        //        UIImageView *imageView = [[UIImageView alloc] init];
+        //        imageView.image = [UIImage imageNamed:@"qq_news_cell_background_placeholder"];
+        //        cell.backgroundView = imageView;
+    }
+    return cell;
+}
+
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -30,20 +44,6 @@
         [self setupUI];
     }
     return self;
-}
-
-+ (instancetype)qq_newsAudioCellWithTableView:(UITableView *)tableView {
-    
-    static NSString *ID = @"QQNewsAudioCell";
-    QQNewsAudioCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (cell == nil) {
-        cell = [[QQNewsAudioCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-        
-//        UIImageView *imageView = [[UIImageView alloc] init];
-//        imageView.image = [UIImage imageNamed:@"qq_news_cell_background_placeholder"];
-//        cell.backgroundView = imageView;
-    }
-    return cell;
 }
 
 #pragma mark - SetupUI

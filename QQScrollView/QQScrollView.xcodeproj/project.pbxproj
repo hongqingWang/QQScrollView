@@ -29,6 +29,7 @@
 		04577C841FD7EE6700A0DB29 /* QQHomeWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04577C831FD7EE6700A0DB29 /* QQHomeWebViewController.m */; };
 		04577C891FD7F62000A0DB29 /* MBProgressHUD+QQ.m in Sources */ = {isa = PBXBuildFile; fileRef = 04577C871FD7F62000A0DB29 /* MBProgressHUD+QQ.m */; };
 		04577C8A1FD7F62000A0DB29 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 04577C881FD7F62000A0DB29 /* MBProgressHUD.bundle */; };
+		04DEE6001FD8E37D008CA032 /* UIColor+QQ.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DEE5FF1FD8E37D008CA032 /* UIColor+QQ.m */; };
 		04EAF5671FD136D3005817DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04EAF5661FD136D3005817DD /* Assets.xcassets */; };
 		04EAF5A91FD13B06005817DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EAF5A51FD13B06005817DD /* main.m */; };
 		04EAF5AA1FD13B06005817DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EAF5A61FD13B06005817DD /* AppDelegate.m */; };
@@ -84,6 +85,8 @@
 		04577C861FD7F62000A0DB29 /* MBProgressHUD+QQ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+QQ.h"; sourceTree = "<group>"; };
 		04577C871FD7F62000A0DB29 /* MBProgressHUD+QQ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+QQ.m"; sourceTree = "<group>"; };
 		04577C881FD7F62000A0DB29 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
+		04DEE5FE1FD8E37D008CA032 /* UIColor+QQ.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+QQ.h"; sourceTree = "<group>"; };
+		04DEE5FF1FD8E37D008CA032 /* UIColor+QQ.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+QQ.m"; sourceTree = "<group>"; };
 		04EAF55A1FD136D3005817DD /* QQScrollView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QQScrollView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EAF5661FD136D3005817DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04EAF56B1FD136D3005817DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -321,6 +324,8 @@
 			children = (
 				04105BE61FD6BFD400DC3EF3 /* UILabel+QQ.h */,
 				04105BE71FD6BFD400DC3EF3 /* UILabel+QQ.m */,
+				04DEE5FE1FD8E37D008CA032 /* UIColor+QQ.h */,
+				04DEE5FF1FD8E37D008CA032 /* UIColor+QQ.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -623,6 +628,7 @@
 				04105BCE1FD6870300DC3EF3 /* QQHomeMainListViewModel.m in Sources */,
 				04577C6C1FD7878000A0DB29 /* QQHomeAaCell.m in Sources */,
 				04EAF5A91FD13B06005817DD /* main.m in Sources */,
+				04DEE6001FD8E37D008CA032 /* UIColor+QQ.m in Sources */,
 				04105BDB1FD6A88A00DC3EF3 /* QQNewsVideoCell.m in Sources */,
 				04105BAB1FD4EBE800DC3EF3 /* QQNetworkManager+News.m in Sources */,
 				04105BD41FD6A6BC00DC3EF3 /* QQNewsOneImageCell.m in Sources */,

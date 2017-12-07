@@ -10,6 +10,6 @@
 
 @interface QQHomeAaCell : UITableViewCell
 
-+ (instancetype)qq_homeAaCellWithTableView:(UITableView *)tableView;
++ (instancetype)qq_homeAaCellWithTableView:(UITableView *)tableView itemCount:(NSInteger)itemCount;
 
 @end

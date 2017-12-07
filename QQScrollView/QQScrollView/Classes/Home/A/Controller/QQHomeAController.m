@@ -16,6 +16,8 @@
 
 /// TableHeaderView
 @property (nonatomic, strong) QQHomeAHeaderView *headerView;
+/// ItemCount
+@property (nonatomic, assign) NSInteger itemCount;
 
 @end
 
@@ -24,6 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.itemCount = 6;
     [self setupUI];
     [self loadBannerData];
 }
@@ -78,14 +81,43 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    QQHomeAaCell *cell = [QQHomeAaCell qq_homeAaCellWithTableView:tableView];
+    if (indexPath.row == 0) {
+        
+        QQHomeAaCell *cell = [QQHomeAaCell qq_homeAaCellWithTableView:tableView itemCount:self.itemCount];
+        return cell;
+        
+    } else if (indexPath.row == 1) {
+        
+        UITableViewCell *cell = [[UITableViewCell alloc] init];
+        return cell;
+        
+    } else {
+        
+        UITableViewCell *cell = [[UITableViewCell alloc] init];
+        return cell;
+    }
     
-    cell.textLabel.text = @"aaaddd";
-    
-    return cell;
 }
 
-
+#pragma mark - UITableViewDelegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.row == 0) {
+        
+        if (self.itemCount <= 4) {
+            return 100;
+        } else {
+            return 200;
+        }
+        
+    } else if (indexPath.row == 1) {
+        return 44;
+    } else if (indexPath.row == 2) {
+        return 200;
+    } else {
+        return 44;
+    }
+}
 
 #pragma mark - Getters and Setters
 - (QQHomeAHeaderView *)headerView {

@@ -10,6 +10,16 @@
 
 @implementation QQNewsOneImageCell
 
++ (instancetype)qq_newsOneImageCellWithTableView:(UITableView *)tableView {
+    
+    static NSString *ID = @"QQNewsOneImageCell";
+    QQNewsOneImageCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    if (cell == nil) {
+        cell = [[QQNewsOneImageCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+    }
+    return cell;
+}
+
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -19,16 +29,6 @@
         [self setupUI];
     }
     return self;
-}
-
-+ (instancetype)qq_newsOneImageCellWithTableView:(UITableView *)tableView {
-    
-    static NSString *ID = @"QQNewsOneImageCell";
-    QQNewsOneImageCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (cell == nil) {
-        cell = [[QQNewsOneImageCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-    }
-    return cell;
 }
 
 #pragma mark - SetupUI
