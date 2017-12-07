@@ -15,7 +15,9 @@
 #import "QQHomeViewModel.h"
 #import "QQHomeA.h"
 
-@interface QQHomeAController ()<SDCycleScrollViewDelegate, QQHomeAaCellDelegate>
+#import "QQHomeAbCell.h"
+
+@interface QQHomeAController ()<SDCycleScrollViewDelegate, QQHomeAaCellDelegate, QQHomeAbCellDelegate>
 
 /// TableHeaderView
 @property (nonatomic, strong) QQHomeAHeaderView *headerView;
@@ -111,6 +113,14 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+#pragma mark - QQHomeAbCellDelegate
+- (void)didSelecteItemAtIndex:(NSInteger)index {
+    
+    QQHomeWebViewController *vc = [[QQHomeWebViewController alloc] init];
+    vc.urlString = @"http://www.baidu.com";
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 10;
@@ -120,17 +130,20 @@
     
     if (indexPath.row == 0) {
         
-        
         QQHomeAaCell *cell = [QQHomeAaCell qq_homeAaCellWithTableView:tableView viewModelArray:self.homeListViewModel.itemList];
-        
         cell.delegate = self;
-        
         return cell;
         
     } else if (indexPath.row == 1) {
         
-        UITableViewCell *cell = [[UITableViewCell alloc] init];
-        
+        QQHomeAbCell *cell = [QQHomeAbCell qq_homeAbCellWithTableView:tableView];
+        cell.delegate = self;
+        NSArray *titleArray = @[
+                                @"掌中佛1.0下线了！",
+                                @"掌中佛2.0上线了！",
+                                @"掌中佛3.0上线了！"
+                                ];
+        cell.notiCycleScrollView.titlesGroup = titleArray;
         return cell;
         
     } else {

@@ -34,7 +34,7 @@ static CGFloat headerViewHeight = 180;
 - (SDCycleScrollView *)cycleScrollView {
     if (_cycleScrollView == nil) {
         NSArray *array = @[
-                           @"qq_cycle_placeholder",
+                           @"qq_cycle_placeholder"
                            ];
         CGRect frame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
         _cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:frame imageNamesGroup:array];

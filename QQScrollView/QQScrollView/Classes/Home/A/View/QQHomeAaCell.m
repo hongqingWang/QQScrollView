@@ -50,7 +50,6 @@ static CGFloat const kHomeAaCellMaxHeight = 200;
     for (int i = 0; i < viewModelArray.count; i++) {
         
         viewModel = viewModelArray[i];
-        NSLog(@"%s %@", __FUNCTION__, viewModel.homeA.title);
         
         int row = i / colmns;
         int col = i % colmns;

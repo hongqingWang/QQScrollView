@@ -34,6 +34,7 @@
 		04DEE6121FD8F1F4008CA032 /* QQHomeA.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DEE6111FD8F1F4008CA032 /* QQHomeA.m */; };
 		04DEE6151FD916C3008CA032 /* QQHomeListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DEE6141FD916C3008CA032 /* QQHomeListViewModel.m */; };
 		04DEE6181FD91765008CA032 /* QQHomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DEE6171FD91765008CA032 /* QQHomeViewModel.m */; };
+		04DEE61B1FD92E1D008CA032 /* QQHomeAbCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DEE61A1FD92E1D008CA032 /* QQHomeAbCell.m */; };
 		04EAF5671FD136D3005817DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04EAF5661FD136D3005817DD /* Assets.xcassets */; };
 		04EAF5A91FD13B06005817DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EAF5A51FD13B06005817DD /* main.m */; };
 		04EAF5AA1FD13B06005817DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EAF5A61FD13B06005817DD /* AppDelegate.m */; };
@@ -98,6 +99,8 @@
 		04DEE6141FD916C3008CA032 /* QQHomeListViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQHomeListViewModel.m; sourceTree = "<group>"; };
 		04DEE6161FD91765008CA032 /* QQHomeViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QQHomeViewModel.h; sourceTree = "<group>"; };
 		04DEE6171FD91765008CA032 /* QQHomeViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQHomeViewModel.m; sourceTree = "<group>"; };
+		04DEE6191FD92E1D008CA032 /* QQHomeAbCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QQHomeAbCell.h; sourceTree = "<group>"; };
+		04DEE61A1FD92E1D008CA032 /* QQHomeAbCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQHomeAbCell.m; sourceTree = "<group>"; };
 		04EAF55A1FD136D3005817DD /* QQScrollView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QQScrollView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EAF5661FD136D3005817DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04EAF56B1FD136D3005817DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -218,6 +221,8 @@
 				04577C711FD78AB300A0DB29 /* QQHomeAHeaderView.m */,
 				04577C6A1FD7878000A0DB29 /* QQHomeAaCell.h */,
 				04577C6B1FD7878000A0DB29 /* QQHomeAaCell.m */,
+				04DEE6191FD92E1D008CA032 /* QQHomeAbCell.h */,
+				04DEE61A1FD92E1D008CA032 /* QQHomeAbCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -665,6 +670,7 @@
 				04EAF5C31FD14BB8005817DD /* QQGenneralViewController.m in Sources */,
 				04105BCE1FD6870300DC3EF3 /* QQHomeMainListViewModel.m in Sources */,
 				04577C6C1FD7878000A0DB29 /* QQHomeAaCell.m in Sources */,
+				04DEE61B1FD92E1D008CA032 /* QQHomeAbCell.m in Sources */,
 				04EAF5A91FD13B06005817DD /* main.m in Sources */,
 				04DEE6001FD8E37D008CA032 /* UIColor+QQ.m in Sources */,
 				04105BDB1FD6A88A00DC3EF3 /* QQNewsVideoCell.m in Sources */,

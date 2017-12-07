@@ -12,6 +12,6 @@
 @interface QQHomeAHeaderView : UIView
 
 /// Banner
-@property (nonatomic, strong) SDCycleScrollView *cycleScrollView ;
+@property (nonatomic, strong) SDCycleScrollView *cycleScrollView;
 
 @end
