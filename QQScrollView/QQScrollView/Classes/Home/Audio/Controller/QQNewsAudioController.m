@@ -8,8 +8,12 @@
 
 #import "QQNewsAudioController.h"
 #import "QQNewsAudioCell.h"
+#import "QQNewsListViewModel.h"
 
 @interface QQNewsAudioController ()
+
+/// NewsListViewModel
+@property (nonatomic, strong) QQNewsListViewModel *newsListViewModel;
 
 @end
 
@@ -17,42 +21,48 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-//    self.tableView.
-    NSLog(@"%@", self.view.subviews);
+    
+    self.tableView.estimatedRowHeight = 200;
     
 }
 
 #pragma mark - Load Data
 - (void)loadNewData {
-    
-    NSLog(@"Audio");
-    sleep(3);
-    [self.tableView.mj_header endRefreshing];
+
+    [self.newsListViewModel loadNewsDataCompletion:^(BOOL isSuccessed) {
+
+        if (!isSuccessed) {
+            NSLog(@"%s 没有请求到数据", __FUNCTION__);
+        }
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView reloadData];
+    }];
 }
 
 - (void)loadMoreData {
     
-    sleep(2);
+    sleep(1);
     [self.tableView.mj_footer endRefreshingWithNoMoreData];
 }
 
 #pragma mark - UITableViewDataSource
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return self.newsListViewModel.newsList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     QQNewsAudioCell *cell = [QQNewsAudioCell qq_newsAudioCellWithTableView:tableView];
+    cell.viewModel = self.newsListViewModel.newsList[indexPath.row];
     return cell;
 }
 
-#pragma mark - UITableViewDelegate
-
+#pragma mark - Getters and Setters
+- (QQNewsListViewModel *)newsListViewModel {
+    if (_newsListViewModel == nil) {
+        _newsListViewModel = [[QQNewsListViewModel alloc] init];
+    }
+    return _newsListViewModel;
+}
 
 @end

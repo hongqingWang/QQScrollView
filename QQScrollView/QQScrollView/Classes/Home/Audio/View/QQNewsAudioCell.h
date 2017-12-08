@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+@class QQNewsViewModel;
 
 @interface QQNewsAudioCell : UITableViewCell
+
+/// NewsViewModel
+@property (nonatomic, strong) QQNewsViewModel *viewModel;
 
 + (instancetype)qq_newsAudioCellWithTableView:(UITableView *)tableView;
 

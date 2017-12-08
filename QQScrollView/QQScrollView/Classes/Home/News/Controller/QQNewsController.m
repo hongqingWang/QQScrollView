@@ -10,7 +10,6 @@
 #import "QQNewsCell.h"
 #import "QQNewsThreeImageCell.h"
 #import "QQNewsListViewModel.h"
-#import "QQHomeTableView.h"
 
 @interface QQNewsController ()
 
@@ -61,6 +60,7 @@
     }
 }
 
+#pragma mark - Getters and Setters
 - (QQNewsListViewModel *)newsListViewModel {
     if (_newsListViewModel == nil) {
         _newsListViewModel = [[QQNewsListViewModel alloc] init];
