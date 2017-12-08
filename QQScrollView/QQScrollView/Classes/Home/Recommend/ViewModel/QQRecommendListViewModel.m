@@ -8,8 +8,7 @@
 
 #import "QQRecommendListViewModel.h"
 #import "QQNetworkManager+News.h"
-#import "QQRecommend.h"
-#import <MJExtension.h>
+#import "QQNews.h"
 #import "QQRecommendViewModel.h"
 
 @implementation QQRecommendListViewModel
@@ -24,8 +23,8 @@
         
         for (NSDictionary *dict in dataArray) {
             
-            QQRecommend *recommend = [QQRecommend mj_objectWithKeyValues:dict];
-            [arrayM addObject:[QQRecommendViewModel viewModelWithNews:recommend]];
+            QQNews *news = [QQNews mj_objectWithKeyValues:dict];
+            [arrayM addObject:[QQRecommendViewModel viewModelWithNews:news]];
         }
         
         [self.newsList addObjectsFromArray:arrayM];

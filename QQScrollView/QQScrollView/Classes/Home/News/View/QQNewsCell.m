@@ -8,7 +8,7 @@
 
 #import "QQNewsCell.h"
 #import "QQRecommendViewModel.h"
-#import "QQRecommend.h"
+#import "QQNews.h"
 
 @interface QQNewsCell ()
 
@@ -30,8 +30,8 @@
     
     //    [self.newsImageView sd_setImageWithURL:viewModel.imgsrc_url];
     [self.newsImageView sd_setImageWithURL:viewModel.imgsrc_url placeholderImage:[UIImage imageNamed:@"qq_news_placeholder"]];
-    self.newsTitleLabel.text = viewModel.recommend.title;
-    self.newsSubTitleLabel.text = viewModel.recommend.digest;
+    self.newsTitleLabel.text = viewModel.news.title;
+    self.newsSubTitleLabel.text = viewModel.news.digest;
     self.replyCountLabel.text = viewModel.replyCount_string;
 }
 

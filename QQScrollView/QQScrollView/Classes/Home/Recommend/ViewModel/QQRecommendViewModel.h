@@ -7,17 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-@class QQRecommend;
+@class QQNews;
 
 @interface QQRecommendViewModel : NSObject
 
 /// 新闻数据模型
-@property (nonatomic, strong) QQRecommend *recommend;
+@property (nonatomic, strong) QQNews *news;
 /// 新闻图片URL
 @property (nonatomic, strong) NSURL *imgsrc_url;
 /// 跟帖数(在此处理)
 @property (nonatomic, copy) NSString *replyCount_string;
 
-+ (instancetype)viewModelWithNews:(QQRecommend *)recommend;
++ (instancetype)viewModelWithNews:(QQNews *)news;
 
 @end
