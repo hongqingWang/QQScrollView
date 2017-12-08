@@ -95,7 +95,6 @@
     [self addChildViewController:newsVideoVc];
     
     QQGenneralViewController *genneralVc = [[QQGenneralViewController alloc] init];
-//    genneralVc.view.frame = self.contentScrollView.bounds;
     genneralVc.title = [self.homeMainListViewModel.homeMainList[4] tname];
     [self addChildViewController:genneralVc];
     

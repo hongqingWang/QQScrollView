@@ -161,9 +161,6 @@
     } else if (indexPath.section == 2) {
       
         QQHomeAcCell *cell = [QQHomeAcCell qq_homeAcCellWithTableView:tableView];
-        
-        
-        
         return cell;
         
     } else {
