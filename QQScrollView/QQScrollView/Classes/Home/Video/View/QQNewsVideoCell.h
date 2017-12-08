@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+@class QQNewsViewModel;
 
 @interface QQNewsVideoCell : UITableViewCell
+
+/// NewsViewModel
+@property (nonatomic, strong) QQNewsViewModel *viewModel;
 
 + (instancetype)qq_newsVideoCellWithTableView:(UITableView *)tableView;
 

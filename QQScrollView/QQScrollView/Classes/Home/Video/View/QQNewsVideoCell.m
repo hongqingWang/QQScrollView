@@ -1,0 +1,161 @@
+//
+//  QQNewsVideoCell.m
+//  QQScrollView
+//
+//  Created by Mac on 05/12/2017.
+//  Copyright © 2017 Mac. All rights reserved.
+//
+
+#import "QQNewsVideoCell.h"
+#import "QQNewsViewModel.h"
+
+@interface QQNewsVideoCell ()
+
+/// 图片
+@property (nonatomic, strong) UIImageView *newsImageView;
+/// 播放按钮
+@property (nonatomic, strong) UIButton *playButton;
+/// 标题
+@property (nonatomic, strong) UILabel *newsTitleLabel;
+/// 来源
+@property (nonatomic, strong) UILabel *sourceLabel;
+/// 时间
+@property (nonatomic, strong) UILabel *timeLabel;
+/// 浏览量
+@property (nonatomic, strong) UILabel *dayNumLabel;
+
+@end
+
+@implementation QQNewsVideoCell
+
+- (void)setViewModel:(QQNewsViewModel *)viewModel {
+    _viewModel = viewModel;
+    
+    [self.newsImageView sd_setImageWithURL:viewModel.imgsrc_url placeholderImage:[UIImage imageNamed:@"qq_news_placeholder"]];
+    self.newsTitleLabel.attributedText = viewModel.title_attr_string;
+    self.sourceLabel.text = viewModel.source_string;
+    self.dayNumLabel.text = viewModel.daynum_string;
+}
+
+
++ (instancetype)qq_newsVideoCellWithTableView:(UITableView *)tableView {
+    
+    static NSString *ID = @"QQNewsVideoCell";
+    QQNewsVideoCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    if (cell == nil) {
+        cell = [[QQNewsVideoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+    }
+    return cell;
+}
+
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    
+    if (self) {
+        
+        [self setupUI];
+    }
+    return self;
+}
+
+#pragma mark - SetupUI
+- (void)setupUI {
+    
+    [self addSubview:self.newsImageView];
+    [self addSubview:self.playButton];
+    [self addSubview:self.newsTitleLabel];
+    [self addSubview:self.sourceLabel];
+    [self addSubview:self.timeLabel];
+    [self addSubview:self.dayNumLabel];
+    
+    [self.newsImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self);
+        make.left.equalTo(self);
+        make.right.equalTo(self);
+        make.bottom.equalTo(self).offset(-28);
+    }];
+    [self.playButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.newsImageView);
+        make.width.height.mas_equalTo(30);
+    }];
+    [self.newsTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self).offset(8);
+        make.left.equalTo(self).offset(16);
+        make.right.equalTo(self).offset(-16);
+    }];
+    [self.sourceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self).offset(-8);
+        make.left.equalTo(self.newsTitleLabel);
+        make.width.mas_equalTo(60);
+    }];
+    [self.timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self.sourceLabel);
+        make.left.equalTo(self.sourceLabel.mas_right);
+        make.width.mas_equalTo(60);
+    }];
+    [self.dayNumLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self.timeLabel);
+        make.left.equalTo(self.timeLabel.mas_right);
+    }];
+}
+
+#pragma mark - Getters and Setters
+- (UIImageView *)newsImageView {
+    if (_newsImageView == nil) {
+        _newsImageView = [[UIImageView alloc] init];
+        _newsImageView.image = [UIImage imageNamed:@"qq_news_placeholder"];
+    }
+    return _newsImageView;
+}
+
+- (UIButton *)playButton {
+    if (_playButton == nil) {
+        _playButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_playButton setBackgroundColor:[UIColor redColor]];
+    }
+    return _playButton;
+}
+
+- (UILabel *)newsTitleLabel {
+    if (_newsTitleLabel == nil) {
+        _newsTitleLabel = [[UILabel alloc] init];
+        [_newsTitleLabel qq_setText:@"视角|一位九旬老人对疾病与死亡的感悟，是否震撼到你？对疾病与死亡的感悟" lineSpacing:6];
+        _newsTitleLabel.textColor = [UIColor whiteColor];
+        _newsTitleLabel.font = [UIFont systemFontOfSize:16];
+        _newsTitleLabel.numberOfLines = 0;
+    }
+    return _newsTitleLabel;
+}
+
+- (UILabel *)sourceLabel {
+    if (_sourceLabel == nil) {
+        _sourceLabel = [[UILabel alloc] init];
+        _sourceLabel.text = @"来源";
+        _sourceLabel.textColor = [UIColor lightGrayColor];
+        _sourceLabel.font = [UIFont systemFontOfSize:11];
+    }
+    return _sourceLabel;
+}
+
+- (UILabel *)timeLabel {
+    if (_timeLabel == nil) {
+        _timeLabel = [[UILabel alloc] init];
+        _timeLabel.text = @"21分钟前";
+        _timeLabel.textColor = [UIColor lightGrayColor];
+        _timeLabel.font = [UIFont systemFontOfSize:11];
+    }
+    return _timeLabel;
+}
+
+- (UILabel *)dayNumLabel {
+    if (_dayNumLabel == nil) {
+        _dayNumLabel = [[UILabel alloc] init];
+        _dayNumLabel.text = @"1111";
+        _dayNumLabel.textColor = [UIColor lightGrayColor];
+        _dayNumLabel.font = [UIFont systemFontOfSize:11];
+    }
+    return _dayNumLabel;
+}
+
+@end
