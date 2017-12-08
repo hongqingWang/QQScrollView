@@ -1,18 +1,16 @@
 //
-//  QQRecommendCell.m
+//  QQNewsCell.m
 //  QQScrollView
 //
-//  Created by Mac on 01/12/2017.
+//  Created by Mac on 08/12/2017.
 //  Copyright © 2017 Mac. All rights reserved.
 //
 
-#import "QQRecommendCell.h"
-#import <Masonry.h>
-#import <UIImageView+WebCache.h>
+#import "QQNewsCell.h"
 #import "QQRecommendViewModel.h"
 #import "QQRecommend.h"
 
-@interface QQRecommendCell ()
+@interface QQNewsCell ()
 
 /// 图片
 @property (nonatomic, strong) UIImageView *newsImageView;
@@ -25,7 +23,7 @@
 
 @end
 
-@implementation QQRecommendCell
+@implementation QQNewsCell
 
 - (void)setViewModel:(QQRecommendViewModel *)viewModel {
     _viewModel = viewModel;
@@ -37,6 +35,16 @@
     self.replyCountLabel.text = viewModel.replyCount_string;
 }
 
++ (instancetype)qq_newsCellWithTableView:(UITableView *)tableView {
+    
+    static NSString *ID = @"QQNewsCell";
+    QQNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    if (cell == nil) {
+        cell = [[QQNewsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+    }
+    return cell;
+}
+
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -46,16 +54,6 @@
         [self setupUI];
     }
     return self;
-}
-
-+ (instancetype)recommendCellWithTableView:(UITableView *)tableView {
-    
-    static NSString *ID = @"QQRecommendCell";
-    QQRecommendCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (cell == nil) {
-        cell = [[QQRecommendCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-    }
-    return cell;
 }
 
 #pragma mark - SetupUI

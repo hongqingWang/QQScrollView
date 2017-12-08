@@ -7,13 +7,14 @@
 //
 
 #import "QQHomeMainController.h"
-#import "QQRecommendViewController.h"
+//#import "QQRecommendViewController.h"
 #import "QQGenneralViewController.h"
 #import "QQSliderLabel.h"
 #import "QQHomeMainListViewModel.h"
 #import "QQChannel.h"
 
 #import "QQHomeAController.h"
+#import "QQNewsController.h"
 #import "QQNewsAudioController.h"
 #import "QQNewsVideoController.h"
 
@@ -82,9 +83,9 @@
     aVc.title = [self.homeMainListViewModel.homeMainList[0] tname];
     [self addChildViewController:aVc];
     
-    QQRecommendViewController *recommendVc = [[QQRecommendViewController alloc] init];
-    recommendVc.title = [self.homeMainListViewModel.homeMainList[1] tname];
-    [self addChildViewController:recommendVc];
+    QQNewsController *newsVc = [[QQNewsController alloc] init];
+    newsVc.title = [self.homeMainListViewModel.homeMainList[1] tname];
+    [self addChildViewController:newsVc];
     
     QQNewsAudioController *newsAudioVc = [[QQNewsAudioController alloc] init];
     newsAudioVc.title = [self.homeMainListViewModel.homeMainList[2] tname];
@@ -175,7 +176,7 @@
 #pragma mark - setupDefaultViewController
 - (void)setupDefaultViewController {
     
-    QQRecommendViewController *vc = (QQRecommendViewController *)[self.childViewControllers firstObject];
+    QQHomeAController *vc = (QQHomeAController *)[self.childViewControllers firstObject];
     vc.view.frame = self.contentScrollView.bounds;
     [self.contentScrollView addSubview:vc.view];
 }
