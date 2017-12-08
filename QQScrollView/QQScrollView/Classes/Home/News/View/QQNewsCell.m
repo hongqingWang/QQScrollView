@@ -8,7 +8,6 @@
 
 #import "QQNewsCell.h"
 #import "QQNewsViewModel.h"
-#import "QQNews.h"
 
 @interface QQNewsCell ()
 
@@ -16,10 +15,12 @@
 @property (nonatomic, strong) UIImageView *newsImageView;
 /// 标题
 @property (nonatomic, strong) UILabel *newsTitleLabel;
-/// 副标题
-@property (nonatomic, strong) UILabel *newsSubTitleLabel;
-/// 跟帖数
-@property (nonatomic, strong) UILabel *replyCountLabel;
+/// 来源
+@property (nonatomic, strong) UILabel *sourceLabel;
+/// 时间
+@property (nonatomic, strong) UILabel *timeLabel;
+/// 浏览量
+@property (nonatomic, strong) UILabel *dayNumLabel;
 
 @end
 
@@ -28,11 +29,10 @@
 - (void)setViewModel:(QQNewsViewModel *)viewModel {
     _viewModel = viewModel;
     
-    //    [self.newsImageView sd_setImageWithURL:viewModel.imgsrc_url];
     [self.newsImageView sd_setImageWithURL:viewModel.imgsrc_url placeholderImage:[UIImage imageNamed:@"qq_news_placeholder"]];
-    self.newsTitleLabel.text = viewModel.news.title;
-    self.newsSubTitleLabel.text = viewModel.news.digest;
-    self.replyCountLabel.text = viewModel.replyCount_string;
+    self.newsTitleLabel.attributedText = viewModel.title_attr_string;
+    self.sourceLabel.text = viewModel.source_string;
+    self.dayNumLabel.text = viewModel.daynum_string;
 }
 
 + (instancetype)qq_newsCellWithTableView:(UITableView *)tableView {
@@ -61,32 +61,35 @@
     
     [self addSubview:self.newsImageView];
     [self addSubview:self.newsTitleLabel];
-    [self addSubview:self.newsSubTitleLabel];
-    [self addSubview:self.replyCountLabel];
-}
-
-- (void)layoutSubviews {
-    [super layoutSubviews];
+    [self addSubview:self.sourceLabel];
+    [self addSubview:self.timeLabel];
+    [self addSubview:self.dayNumLabel];
     
     [self.newsImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self).offset(8);
-        make.left.equalTo(self).offset(16);
+        make.right.equalTo(self).offset(-16);
+        make.width.mas_equalTo(100);
+        make.height.mas_equalTo(80);
         make.bottom.equalTo(self).offset(-8);
-        make.width.mas_equalTo(112);
     }];
     [self.newsTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_newsImageView);
-        make.left.equalTo(_newsImageView.mas_right).offset(8);
-        make.right.equalTo(self).offset(-16);
+        make.top.equalTo(self).offset(8);
+        make.left.equalTo(self).offset(16);
+        make.right.equalTo(self.newsImageView.mas_left).offset(-16);
     }];
-    [self.newsSubTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_newsTitleLabel.mas_bottom).offset(8);
-        make.left.equalTo(_newsTitleLabel);
-        make.right.equalTo(_newsTitleLabel);
-    }];
-    [self.replyCountLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.sourceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self).offset(-8);
-        make.right.equalTo(self).offset(-16);
+        make.left.equalTo(self.newsTitleLabel);
+        make.width.mas_equalTo(60);
+    }];
+    [self.timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self.sourceLabel);
+        make.left.equalTo(self.sourceLabel.mas_right);
+        make.width.mas_equalTo(60);
+    }];
+    [self.dayNumLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self.timeLabel);
+        make.left.equalTo(self.timeLabel.mas_right);
     }];
 }
 
@@ -102,32 +105,42 @@
 - (UILabel *)newsTitleLabel {
     if (_newsTitleLabel == nil) {
         _newsTitleLabel = [[UILabel alloc] init];
-        _newsTitleLabel.text = @"标题";
+        [_newsTitleLabel qq_setText:@"视角|一位九旬老人对疾病与死亡的感悟，是否震撼到你？对疾病与死亡的感悟" lineSpacing:6];
         _newsTitleLabel.textColor = [UIColor darkGrayColor];
+        _newsTitleLabel.font = [UIFont systemFontOfSize:16];
+        _newsTitleLabel.numberOfLines = 2;
     }
     return _newsTitleLabel;
 }
 
-- (UILabel *)newsSubTitleLabel {
-    if (_newsSubTitleLabel == nil) {
-        _newsSubTitleLabel = [[UILabel alloc] init];
-        _newsSubTitleLabel.text = @"副标题";
-        _newsSubTitleLabel.textColor = [UIColor lightGrayColor];
-        _newsSubTitleLabel.font = [UIFont systemFontOfSize:14];
-        _newsSubTitleLabel.numberOfLines = 2;
+- (UILabel *)sourceLabel {
+    if (_sourceLabel == nil) {
+        _sourceLabel = [[UILabel alloc] init];
+        _sourceLabel.text = @"来源";
+        _sourceLabel.textColor = [UIColor lightGrayColor];
+        _sourceLabel.font = [UIFont systemFontOfSize:11];
     }
-    return _newsSubTitleLabel;
+    return _sourceLabel;
 }
 
-- (UILabel *)replyCountLabel {
-    if (_replyCountLabel == nil) {
-        _replyCountLabel = [[UILabel alloc] init];
-        _replyCountLabel.text = @"跟帖数";
-        _replyCountLabel.textColor = [UIColor darkGrayColor];
-        _replyCountLabel.font = [UIFont systemFontOfSize:12];
-        _replyCountLabel.textAlignment = NSTextAlignmentRight;
+- (UILabel *)timeLabel {
+    if (_timeLabel == nil) {
+        _timeLabel = [[UILabel alloc] init];
+        _timeLabel.text = @"21分钟前";
+        _timeLabel.textColor = [UIColor lightGrayColor];
+        _timeLabel.font = [UIFont systemFontOfSize:11];
     }
-    return _replyCountLabel;
+    return _timeLabel;
+}
+
+- (UILabel *)dayNumLabel {
+    if (_dayNumLabel == nil) {
+        _dayNumLabel = [[UILabel alloc] init];
+        _dayNumLabel.text = @"1111";
+        _dayNumLabel.textColor = [UIColor lightGrayColor];
+        _dayNumLabel.font = [UIFont systemFontOfSize:11];
+    }
+    return _dayNumLabel;
 }
 
 @end

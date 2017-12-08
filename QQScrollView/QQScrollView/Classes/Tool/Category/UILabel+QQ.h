@@ -10,6 +10,12 @@
 
 @interface UILabel (QQ)
 
+/**
+ Label 的富文本(行间距)
+
+ @param text text
+ @param lineSpacing lineSpacing
+ */
 - (void)qq_setText:(NSString *)text lineSpacing:(CGFloat)lineSpacing;
 
 @end

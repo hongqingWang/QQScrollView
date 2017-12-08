@@ -15,8 +15,12 @@
 @property (nonatomic, strong) QQNews *news;
 /// 新闻图片URL
 @property (nonatomic, strong) NSURL *imgsrc_url;
-/// 跟帖数(在此处理)
-@property (nonatomic, copy) NSString *replyCount_string;
+/// 标题
+@property (nonatomic, copy) NSMutableAttributedString *title_attr_string;
+/// 来源
+@property (nonatomic, copy) NSString *source_string;
+/// 浏览量
+@property (nonatomic, copy) NSString *daynum_string;
 
 + (instancetype)viewModelWithNews:(QQNews *)news;
 

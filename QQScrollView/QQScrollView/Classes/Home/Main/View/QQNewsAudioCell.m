@@ -8,14 +8,13 @@
 
 #import "QQNewsAudioCell.h"
 #import <Masonry.h>
-#import "UILabel+QQ.h"
 
 @interface QQNewsAudioCell ()
 
 /// 图像
 @property (nonatomic, strong) UIImageView *newsImageView;
 /// 标题
-@property (nonatomic, strong) UILabel *newsTitlelabel;
+@property (nonatomic, strong) UILabel *newsTitleLabel;
 /// Cell
 @property (nonatomic, strong) UIView *carve;
 
@@ -52,7 +51,7 @@
 - (void)setupUI {
     
     [self addSubview:self.newsImageView];
-    [self addSubview:self.newsTitlelabel];
+    [self addSubview:self.newsTitleLabel];
     [self addSubview:self.carve];
     
     [self.newsImageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -62,7 +61,7 @@
         make.height.mas_equalTo(80);
         make.bottom.equalTo(self).offset(-8);
     }];
-    [self.newsTitlelabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.newsTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self).offset(8);
         make.left.equalTo(self).offset(16);
         make.right.equalTo(self.newsImageView.mas_left).offset(-16);
@@ -85,14 +84,14 @@
 }
 
 - (UILabel *)newsTitlelabel {
-    if (_newsTitlelabel == nil) {
-        _newsTitlelabel = [[UILabel alloc] init];
-        [_newsTitlelabel qq_setText:@"视角|一位九旬老人对疾病与死亡的感悟，是否震撼到你？对疾病与死亡的感悟" lineSpacing:6];
-        _newsTitlelabel.textColor = [UIColor darkGrayColor];
-        _newsTitlelabel.font = [UIFont systemFontOfSize:16];
-        _newsTitlelabel.numberOfLines = 2;
+    if (_newsTitleLabel == nil) {
+        _newsTitleLabel = [[UILabel alloc] init];
+        [_newsTitleLabel qq_setText:@"视角|一位九旬老人对疾病与死亡的感悟，是否震撼到你？对疾病与死亡的感悟" lineSpacing:6];
+        _newsTitleLabel.textColor = [UIColor darkGrayColor];
+        _newsTitleLabel.font = [UIFont systemFontOfSize:16];
+        _newsTitleLabel.numberOfLines = 2;
     }
-    return _newsTitlelabel;
+    return _newsTitleLabel;
 }
 
 - (UIView *)carve {

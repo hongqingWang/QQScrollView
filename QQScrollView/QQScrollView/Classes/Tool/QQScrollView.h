@@ -12,4 +12,6 @@
 #import <UIImageView+WebCache.h>
 #import "MBProgressHUD+QQ.h"
 #import "UIColor+QQ.h"
+#import "UILabel+QQ.h"
+#import "NSString+QQ.h"
 

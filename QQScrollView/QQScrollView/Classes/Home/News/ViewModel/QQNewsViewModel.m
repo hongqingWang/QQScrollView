@@ -20,22 +20,25 @@
     return viewModel;
 }
 
+#pragma mark - Getters and Setters
 - (NSURL *)imgsrc_url {
     
     return [NSURL URLWithString:self.news.imgsrc];
 }
 
-- (NSString *)replyCount_string {
+- (NSMutableAttributedString *)title_attr_string {
     
-    // 测试跟帖数超过1万
-    //    self.news.replyCount = 23456;
+    return [NSString qq_attributeString:self.news.title fontSize:14 lineSpacing:6];
+}
+
+- (NSString *)source_string {
     
-    if (self.news.replyCount >= 10000) {
-        
-        NSString *string = [NSString stringWithFormat:@"%ld万 跟帖", self.news.replyCount / 10000];
-        return string;
-    }
-    return [NSString stringWithFormat:@"%ld 跟帖", self.news.replyCount];
+    return self.news.source;
+}
+
+- (NSString *)daynum_string {
+    
+    return [NSString stringWithFormat:@"%ld", self.news.daynum];
 }
 
 @end

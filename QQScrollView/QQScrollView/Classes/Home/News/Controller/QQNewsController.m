@@ -13,7 +13,7 @@
 
 @interface QQNewsController ()
 
-/// RecommendListViewModel
+/// NewsListViewModel
 @property (nonatomic, strong) QQNewsListViewModel *newsListViewModel;
 
 @end
@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tableView.rowHeight = 100;
+    self.tableView.estimatedRowHeight = 200;
 }
 
 #pragma mark - Load Data
