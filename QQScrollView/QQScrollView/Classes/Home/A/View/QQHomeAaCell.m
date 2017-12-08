@@ -95,4 +95,9 @@ static CGFloat const kHomeAaCellMaxHeight = 200;
     }
 }
 
+- (void)addSubview:(UIView *)view {
+    if (![view isKindOfClass:[NSClassFromString(@"_UITableViewCellSeparatorView") class]] && view)
+        [super addSubview:view];
+}
+
 @end

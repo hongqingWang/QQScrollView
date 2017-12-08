@@ -70,6 +70,11 @@
     }];
 }
 
+- (void)addSubview:(UIView *)view {
+    if (![view isKindOfClass:[NSClassFromString(@"_UITableViewCellSeparatorView") class]] && view)
+        [super addSubview:view];
+}
+
 #pragma mark - Getters and Setters
 - (UIView *)view01 {
     if (_view01 == nil) {

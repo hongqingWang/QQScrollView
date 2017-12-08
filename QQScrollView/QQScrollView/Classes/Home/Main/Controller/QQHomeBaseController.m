@@ -69,7 +69,6 @@
         _tableView.sectionHeaderHeight = 0;
         _tableView.sectionFooterHeight = 0;
         _tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 0.1)];
-        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
     return _tableView;
 }
