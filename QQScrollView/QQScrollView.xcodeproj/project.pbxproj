@@ -14,6 +14,7 @@
 		04077AB01FDA4424001694B4 /* QQNewsListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04077AAF1FDA4424001694B4 /* QQNewsListViewModel.m */; };
 		04077AB31FDA4432001694B4 /* QQNewsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04077AB21FDA4432001694B4 /* QQNewsViewModel.m */; };
 		04077AB61FDA6BC9001694B4 /* NSString+QQ.m in Sources */ = {isa = PBXBuildFile; fileRef = 04077AB51FDA6BC9001694B4 /* NSString+QQ.m */; };
+		04077AB91FDA84FA001694B4 /* QQNewsThreeImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04077AB81FDA84FA001694B4 /* QQNewsThreeImageCell.m */; };
 		04105BA81FD4E3B700DC3EF3 /* QQNews.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04105BA71FD4E3B700DC3EF3 /* QQNews.xcassets */; };
 		04105BAB1FD4EBE800DC3EF3 /* QQNetworkManager+News.m in Sources */ = {isa = PBXBuildFile; fileRef = 04105BAA1FD4EBE800DC3EF3 /* QQNetworkManager+News.m */; };
 		04105BB61FD647FF00DC3EF3 /* QQSliderLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04105BB41FD647FF00DC3EF3 /* QQSliderLabel.m */; };
@@ -65,6 +66,8 @@
 		04077AB21FDA4432001694B4 /* QQNewsViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQNewsViewModel.m; sourceTree = "<group>"; };
 		04077AB41FDA6BC9001694B4 /* NSString+QQ.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+QQ.h"; sourceTree = "<group>"; };
 		04077AB51FDA6BC9001694B4 /* NSString+QQ.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+QQ.m"; sourceTree = "<group>"; };
+		04077AB71FDA84FA001694B4 /* QQNewsThreeImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QQNewsThreeImageCell.h; sourceTree = "<group>"; };
+		04077AB81FDA84FA001694B4 /* QQNewsThreeImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQNewsThreeImageCell.m; sourceTree = "<group>"; };
 		04105BA71FD4E3B700DC3EF3 /* QQNews.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = QQNews.xcassets; sourceTree = "<group>"; };
 		04105BA91FD4EBE800DC3EF3 /* QQNetworkManager+News.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QQNetworkManager+News.h"; sourceTree = "<group>"; };
 		04105BAA1FD4EBE800DC3EF3 /* QQNetworkManager+News.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "QQNetworkManager+News.m"; sourceTree = "<group>"; };
@@ -191,6 +194,8 @@
 			children = (
 				04077AAB1FDA43EB001694B4 /* QQNewsCell.h */,
 				04077AAC1FDA43EB001694B4 /* QQNewsCell.m */,
+				04077AB71FDA84FA001694B4 /* QQNewsThreeImageCell.h */,
+				04077AB81FDA84FA001694B4 /* QQNewsThreeImageCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -670,6 +675,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04077AB91FDA84FA001694B4 /* QQNewsThreeImageCell.m in Sources */,
 				04577C7E1FD7D56800A0DB29 /* QQHomeAController.m in Sources */,
 				04DEE6181FD91765008CA032 /* QQHomeViewModel.m in Sources */,
 				04077AB01FDA4424001694B4 /* QQNewsListViewModel.m in Sources */,

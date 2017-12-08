@@ -8,6 +8,7 @@
 
 #import "QQNewsController.h"
 #import "QQNewsCell.h"
+#import "QQNewsThreeImageCell.h"
 #import "QQNewsListViewModel.h"
 #import "QQHomeTableView.h"
 
@@ -46,9 +47,18 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    QQNewsCell *cell = [QQNewsCell qq_newsCellWithTableView:tableView];
-    cell.viewModel = self.newsListViewModel.newsList[indexPath.row];
-    return cell;
+    if (indexPath.row % 2 == 0) {
+        
+        QQNewsCell *cell = [QQNewsCell qq_newsCellWithTableView:tableView];
+        cell.viewModel = self.newsListViewModel.newsList[indexPath.row];
+        return cell;
+    
+    } else {
+        
+        QQNewsThreeImageCell *cell = [QQNewsThreeImageCell qq_newsThreeImageCellWithTableView:tableView];
+        cell.viewModel = self.newsListViewModel.newsList[indexPath.row];
+        return cell;
+    }
 }
 
 - (QQNewsListViewModel *)newsListViewModel {

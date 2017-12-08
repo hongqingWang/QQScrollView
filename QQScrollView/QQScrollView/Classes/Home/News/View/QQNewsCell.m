@@ -108,7 +108,7 @@
         [_newsTitleLabel qq_setText:@"视角|一位九旬老人对疾病与死亡的感悟，是否震撼到你？对疾病与死亡的感悟" lineSpacing:6];
         _newsTitleLabel.textColor = [UIColor darkGrayColor];
         _newsTitleLabel.font = [UIFont systemFontOfSize:16];
-        _newsTitleLabel.numberOfLines = 2;
+        _newsTitleLabel.numberOfLines = 0;
     }
     return _newsTitleLabel;
 }
