@@ -7,13 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-@class QQRecommendViewModel;
-
+@class QQNewsViewModel;
 
 @interface QQNewsCell : UITableViewCell
 
-/// RecommendViewModel
-@property (nonatomic, strong) QQRecommendViewModel *viewModel;
+/// NewsViewModel
+@property (nonatomic, strong) QQNewsViewModel *viewModel;
 
 + (instancetype)qq_newsCellWithTableView:(UITableView *)tableView;
 

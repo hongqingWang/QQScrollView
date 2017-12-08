@@ -7,7 +7,6 @@
 //
 
 #import "QQHomeMainController.h"
-//#import "QQRecommendViewController.h"
 #import "QQGenneralViewController.h"
 #import "QQSliderLabel.h"
 #import "QQHomeMainListViewModel.h"

@@ -47,7 +47,6 @@
 		04EAF5AA1FD13B06005817DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EAF5A61FD13B06005817DD /* AppDelegate.m */; };
 		04EAF5C31FD14BB8005817DD /* QQGenneralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EAF5C21FD14BB8005817DD /* QQGenneralViewController.m */; };
 		04EAF5C71FD159F7005817DD /* QQNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EAF5C51FD159F7005817DD /* QQNetworkManager.m */; };
-		04EAF5D61FD161C3005817DD /* QQRecommendListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EAF5D51FD161C3005817DD /* QQRecommendListViewModel.m */; };
 		CC782063D0179E68B841F7C7 /* libPods-QQScrollView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 614F3C513DAFCA9768134F1B /* libPods-QQScrollView.a */; };
 /* End PBXBuildFile section */
 
@@ -127,8 +126,6 @@
 		04EAF5C21FD14BB8005817DD /* QQGenneralViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQGenneralViewController.m; sourceTree = "<group>"; };
 		04EAF5C51FD159F7005817DD /* QQNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QQNetworkManager.m; sourceTree = "<group>"; };
 		04EAF5C61FD159F7005817DD /* QQNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QQNetworkManager.h; sourceTree = "<group>"; };
-		04EAF5D41FD161C3005817DD /* QQRecommendListViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QQRecommendListViewModel.h; sourceTree = "<group>"; };
-		04EAF5D51FD161C3005817DD /* QQRecommendListViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQRecommendListViewModel.m; sourceTree = "<group>"; };
 		614F3C513DAFCA9768134F1B /* libPods-QQScrollView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QQScrollView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86F7F49DE8D1DE9968BFB906 /* Pods-QQScrollView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QQScrollView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QQScrollView/Pods-QQScrollView.debug.xcconfig"; sourceTree = "<group>"; };
 		E25BF256CF25F7E8EDFED4CA /* Pods-QQScrollView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QQScrollView.release.xcconfig"; path = "Pods/Target Support Files/Pods-QQScrollView/Pods-QQScrollView.release.xcconfig"; sourceTree = "<group>"; };
@@ -494,7 +491,6 @@
 		04EAF5B71FD14AA7005817DD /* Recommend */ = {
 			isa = PBXGroup;
 			children = (
-				04EAF5D11FD16193005817DD /* ViewModel */,
 			);
 			path = Recommend;
 			sourceTree = "<group>";
@@ -517,15 +513,6 @@
 				04105BAA1FD4EBE800DC3EF3 /* QQNetworkManager+News.m */,
 			);
 			path = NetWork;
-			sourceTree = "<group>";
-		};
-		04EAF5D11FD16193005817DD /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				04EAF5D41FD161C3005817DD /* QQRecommendListViewModel.h */,
-				04EAF5D51FD161C3005817DD /* QQRecommendListViewModel.m */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		42611408D643000D2101981F /* Pods */ = {
@@ -683,7 +670,6 @@
 				04077AB01FDA4424001694B4 /* QQNewsListViewModel.m in Sources */,
 				04DEE6151FD916C3008CA032 /* QQHomeListViewModel.m in Sources */,
 				04105BC71FD66D5300DC3EF3 /* QQChannel.m in Sources */,
-				04EAF5D61FD161C3005817DD /* QQRecommendListViewModel.m in Sources */,
 				04EAF5C71FD159F7005817DD /* QQNetworkManager.m in Sources */,
 				04105BB91FD64DB500DC3EF3 /* QQHomeMainController.m in Sources */,
 				04105BB61FD647FF00DC3EF3 /* QQSliderLabel.m in Sources */,

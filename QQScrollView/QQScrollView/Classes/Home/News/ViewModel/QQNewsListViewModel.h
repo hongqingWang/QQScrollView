@@ -10,4 +10,9 @@
 
 @interface QQNewsListViewModel : NSObject
 
+/// 推荐新闻模型数组
+@property (nonatomic, strong) NSMutableArray *newsList;
+
+- (void)loadNewsDataCompletion:(void (^)(BOOL isSuccessed))completion;
+
 @end
