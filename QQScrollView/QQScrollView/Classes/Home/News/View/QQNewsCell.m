@@ -7,7 +7,7 @@
 //
 
 #import "QQNewsCell.h"
-#import "QQRecommendViewModel.h"
+#import "QQNewsViewModel.h"
 #import "QQNews.h"
 
 @interface QQNewsCell ()
@@ -25,7 +25,7 @@
 
 @implementation QQNewsCell
 
-- (void)setViewModel:(QQRecommendViewModel *)viewModel {
+- (void)setViewModel:(QQNewsViewModel *)viewModel {
     _viewModel = viewModel;
     
     //    [self.newsImageView sd_setImageWithURL:viewModel.imgsrc_url];
