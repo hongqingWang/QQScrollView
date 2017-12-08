@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04077A971FDA28AB001694B4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04077A961FDA28AB001694B4 /* Default-568h@2x.png */; };
 		04105BA81FD4E3B700DC3EF3 /* QQNews.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04105BA71FD4E3B700DC3EF3 /* QQNews.xcassets */; };
 		04105BAB1FD4EBE800DC3EF3 /* QQNetworkManager+News.m in Sources */ = {isa = PBXBuildFile; fileRef = 04105BAA1FD4EBE800DC3EF3 /* QQNetworkManager+News.m */; };
 		04105BB61FD647FF00DC3EF3 /* QQSliderLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04105BB41FD647FF00DC3EF3 /* QQSliderLabel.m */; };
@@ -50,6 +51,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04077A961FDA28AB001694B4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		04105BA71FD4E3B700DC3EF3 /* QQNews.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = QQNews.xcassets; sourceTree = "<group>"; };
 		04105BA91FD4EBE800DC3EF3 /* QQNetworkManager+News.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QQNetworkManager+News.h"; sourceTree = "<group>"; };
 		04105BAA1FD4EBE800DC3EF3 /* QQNetworkManager+News.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "QQNetworkManager+News.m"; sourceTree = "<group>"; };
@@ -267,7 +269,6 @@
 			isa = PBXGroup;
 			children = (
 				04EAF55C1FD136D3005817DD /* QQScrollView */,
-				04EAF55B1FD136D3005817DD /* Products */,
 				42611408D643000D2101981F /* Pods */,
 				BBE801F6267BCCD030239596 /* Frameworks */,
 			);
@@ -279,6 +280,7 @@
 				04EAF55A1FD136D3005817DD /* QQScrollView.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		04EAF55C1FD136D3005817DD /* QQScrollView */ = {
@@ -286,6 +288,7 @@
 			children = (
 				04EAF59D1FD13B06005817DD /* Classes */,
 				04EAF5661FD136D3005817DD /* Assets.xcassets */,
+				04EAF55B1FD136D3005817DD /* Products */,
 				04EAF56B1FD136D3005817DD /* Info.plist */,
 			);
 			path = QQScrollView;
@@ -323,6 +326,7 @@
 		04EAF5A01FD13B06005817DD /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				04077A961FDA28AB001694B4 /* Default-568h@2x.png */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -587,6 +591,7 @@
 				04577C8A1FD7F62000A0DB29 /* MBProgressHUD.bundle in Resources */,
 				04577C741FD79C4800A0DB29 /* QQHome.xcassets in Resources */,
 				04DEE60C1FD8EF69008CA032 /* qq_item_list.json in Resources */,
+				04077A971FDA28AB001694B4 /* Default-568h@2x.png in Resources */,
 				04EAF5671FD136D3005817DD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -800,7 +805,6 @@
 			baseConfigurationReference = 86F7F49DE8D1DE9968BFB906 /* Pods-QQScrollView.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GC4GVLG96H;
 				GCC_PREFIX_HEADER = QQScrollView/Classes/Tool/QQScrollView.h;
@@ -809,7 +813,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ymbenzhi.QQScrollView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -818,7 +822,6 @@
 			baseConfigurationReference = E25BF256CF25F7E8EDFED4CA /* Pods-QQScrollView.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GC4GVLG96H;
 				GCC_PREFIX_HEADER = QQScrollView/Classes/Tool/QQScrollView.h;
@@ -827,7 +830,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ymbenzhi.QQScrollView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
