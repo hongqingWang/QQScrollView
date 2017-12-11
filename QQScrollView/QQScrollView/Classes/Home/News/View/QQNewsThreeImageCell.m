@@ -68,7 +68,7 @@ static CGFloat const imageHeight = 60;
 #pragma mark - SetupUI
 - (void)setupUI {
     
-    CGFloat imageWidth = ([UIScreen mainScreen].bounds.size.width - (16 * 2) - (margin * 2)) / 3;
+    CGFloat imageWidth = ([UIScreen mainScreen].bounds.size.width - (10 * 2) - (margin * 2)) / 3;
     
     [self addSubview:self.newsTitleLabel];
     [self addSubview:self.newsFirstImageView];
@@ -79,12 +79,12 @@ static CGFloat const imageHeight = 60;
     [self addSubview:self.dayNumLabel];
     
     [self.newsTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self).offset(8);
-        make.left.equalTo(self).offset(16);
-        make.right.equalTo(self).offset(-16);
+        make.top.equalTo(self).offset(10);
+        make.left.equalTo(self).offset(10);
+        make.right.equalTo(self).offset(-10);
     }];
     [self.newsFirstImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.newsTitleLabel.mas_bottom).offset(8);
+        make.top.equalTo(self.newsTitleLabel.mas_bottom).offset(10);
         make.left.equalTo(self.newsTitleLabel);
         make.height.mas_equalTo(imageHeight);
         make.width.mas_equalTo(imageWidth);
@@ -102,10 +102,10 @@ static CGFloat const imageHeight = 60;
         make.width.mas_equalTo(imageWidth);
     }];
     [self.sourceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.newsFirstImageView.mas_bottom).offset(8);
+        make.top.equalTo(self.newsFirstImageView.mas_bottom).offset(10);
         make.left.equalTo(self.newsFirstImageView);
         make.width.mas_equalTo(60);
-        make.bottom.equalTo(self).offset(-8);
+        make.bottom.equalTo(self).offset(-10);
     }];
     [self.timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.sourceLabel);

@@ -21,6 +21,8 @@
 @property (nonatomic, copy) NSString *source_string;
 /// 浏览量
 @property (nonatomic, copy) NSString *daynum_string;
+/// CellHeight
+@property (nonatomic, assign) CGFloat cellHeight;
 
 + (instancetype)viewModelWithNews:(QQNews *)news;
 

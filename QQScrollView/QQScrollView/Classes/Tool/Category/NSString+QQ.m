@@ -15,6 +15,8 @@
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:string];
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     [paragraphStyle setLineSpacing:lineSpacing];
+    // 解决`Label`不能正确换行问题
+    paragraphStyle.lineBreakMode = NSLineBreakByCharWrapping;
     NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
     attrs[NSParagraphStyleAttributeName] = paragraphStyle;
     attrs[NSFontAttributeName] = [UIFont systemFontOfSize:fontSize];

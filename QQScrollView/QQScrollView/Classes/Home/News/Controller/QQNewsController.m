@@ -8,8 +8,11 @@
 
 #import "QQNewsController.h"
 #import "QQNewsCell.h"
+#import "QQNewsNoImageCell.h"
 #import "QQNewsThreeImageCell.h"
 #import "QQNewsListViewModel.h"
+#import "QQNewsViewModel.h"
+#import "QQNews.h"
 
 @interface QQNewsController ()
 
@@ -23,7 +26,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tableView.estimatedRowHeight = 200;
 }
 
 #pragma mark - Load Data
@@ -46,18 +48,34 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (indexPath.row % 2 == 0) {
+    QQNewsViewModel *viewModel = self.newsListViewModel.newsList[indexPath.row];
+    NSInteger count = viewModel.news.replyCount % 3;
+    
+    if (count == 0) {
         
-        QQNewsCell *cell = [QQNewsCell qq_newsCellWithTableView:tableView];
-        cell.viewModel = self.newsListViewModel.newsList[indexPath.row];
+        QQNewsNoImageCell *cell = [QQNewsNoImageCell qq_newsNoImageCellWithTableView:tableView];
+        cell.viewModel = viewModel;
         return cell;
     
+    } else if (count == 1) {
+      
+        QQNewsCell *cell = [QQNewsCell qq_newsCellWithTableView:tableView];
+        cell.viewModel = viewModel;
+        return cell;
+        
     } else {
         
         QQNewsThreeImageCell *cell = [QQNewsThreeImageCell qq_newsThreeImageCellWithTableView:tableView];
-        cell.viewModel = self.newsListViewModel.newsList[indexPath.row];
+        cell.viewModel = viewModel;
         return cell;
     }
+}
+
+#pragma mark - UITableViewDelegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    QQNewsViewModel *viewModel = self.newsListViewModel.newsList[indexPath.row];
+    return viewModel.cellHeight;
 }
 
 #pragma mark - Getters and Setters

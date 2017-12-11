@@ -1,18 +1,16 @@
 //
-//  QQNewsCell.m
+//  QQNewsNoImageCell.m
 //  QQScrollView
 //
-//  Created by Mac on 08/12/2017.
+//  Created by Mac on 11/12/2017.
 //  Copyright © 2017 Mac. All rights reserved.
 //
 
-#import "QQNewsCell.h"
+#import "QQNewsNoImageCell.h"
 #import "QQNewsViewModel.h"
 
-@interface QQNewsCell ()
+@interface QQNewsNoImageCell ()
 
-/// 图片
-@property (nonatomic, strong) UIImageView *newsImageView;
 /// 标题
 @property (nonatomic, strong) UILabel *newsTitleLabel;
 /// 来源
@@ -24,23 +22,22 @@
 
 @end
 
-@implementation QQNewsCell
+@implementation QQNewsNoImageCell
 
 - (void)setViewModel:(QQNewsViewModel *)viewModel {
     _viewModel = viewModel;
     
-    [self.newsImageView sd_setImageWithURL:viewModel.imgsrc_url placeholderImage:[UIImage imageNamed:@"qq_news_placeholder"]];
     self.newsTitleLabel.attributedText = viewModel.title_attr_string;
     self.sourceLabel.text = viewModel.source_string;
     self.dayNumLabel.text = viewModel.daynum_string;
 }
 
-+ (instancetype)qq_newsCellWithTableView:(UITableView *)tableView {
++ (instancetype)qq_newsNoImageCellWithTableView:(UITableView *)tableView {
     
-    static NSString *ID = @"QQNewsCell";
-    QQNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    static NSString *ID = @"QQNewsNoImageCell";
+    QQNewsNoImageCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (cell == nil) {
-        cell = [[QQNewsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+        cell = [[QQNewsNoImageCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
     }
     return cell;
 }
@@ -59,22 +56,15 @@
 #pragma mark - SetupUI
 - (void)setupUI {
     
-    [self addSubview:self.newsImageView];
     [self addSubview:self.newsTitleLabel];
     [self addSubview:self.sourceLabel];
     [self addSubview:self.timeLabel];
     [self addSubview:self.dayNumLabel];
     
-    [self.newsImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self).offset(10);
-        make.right.equalTo(self).offset(-10);
-        make.width.mas_equalTo(100);
-        make.height.mas_equalTo(80);
-    }];
     [self.newsTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self).offset(10);
         make.left.equalTo(self).offset(10);
-        make.right.equalTo(self.newsImageView.mas_left).offset(-10);
+        make.right.equalTo(self).offset(-10);
     }];
     [self.sourceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self).offset(-10);
@@ -93,14 +83,6 @@
 }
 
 #pragma mark - Getters and Setters
-- (UIImageView *)newsImageView {
-    if (_newsImageView == nil) {
-        _newsImageView = [[UIImageView alloc] init];
-        _newsImageView.image = [UIImage imageNamed:@"qq_news_placeholder"];
-    }
-    return _newsImageView;
-}
-
 - (UILabel *)newsTitleLabel {
     if (_newsTitleLabel == nil) {
         _newsTitleLabel = [[UILabel alloc] init];
