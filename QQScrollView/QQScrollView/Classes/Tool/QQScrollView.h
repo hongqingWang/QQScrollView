@@ -8,6 +8,7 @@
 
 #import <MJRefresh.h>
 #import <MJExtension.h>
+#import <Mantle.h>
 #import <Masonry.h>
 #import <UIImageView+WebCache.h>
 #import "MBProgressHUD+QQ.h"
