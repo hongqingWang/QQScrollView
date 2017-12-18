@@ -56,9 +56,9 @@
         QQNewsNoImageCell *cell = [QQNewsNoImageCell qq_newsNoImageCellWithTableView:tableView];
         cell.viewModel = viewModel;
         return cell;
-    
+        
     } else if (count == 1) {
-      
+        
         QQNewsCell *cell = [QQNewsCell qq_newsCellWithTableView:tableView];
         cell.viewModel = viewModel;
         return cell;
