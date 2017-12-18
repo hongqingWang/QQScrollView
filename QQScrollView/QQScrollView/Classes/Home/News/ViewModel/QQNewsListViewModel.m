@@ -11,8 +11,6 @@
 #import "QQNews.h"
 #import "QQNewsViewModel.h"
 
-#import "QQNewsModel.h"
-
 @implementation QQNewsListViewModel
 
 - (void)loadNewsDataCompletion:(void (^)(BOOL))completion {
@@ -27,9 +25,6 @@
             
             QQNews *news = [QQNews mj_objectWithKeyValues:dict];
             [arrayM addObject:[QQNewsViewModel viewModelWithNews:news]];
-            NSLog(@"%@", news.title);
-            QQNewsModel *model = [MTLJSONAdapter modelOfClass:[QQNewsModel class] fromJSONDictionary:dict error:nil];
-            NSLog(@"-=-=%@", model.title);
         }
         
         [self.newsList addObjectsFromArray:arrayM];

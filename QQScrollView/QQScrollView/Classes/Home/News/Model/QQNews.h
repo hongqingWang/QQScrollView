@@ -18,7 +18,9 @@
 @property (nonatomic, copy) NSString *source;
 /// 跟帖数
 @property (nonatomic, assign) NSInteger daynum;
+//@property (nonatomic, assign) NSNumber *daynum;
 /// replyCount
 @property (nonatomic, assign) NSInteger replyCount;
+//@property (nonatomic, assign) NSNumber *replyCount;
 
 @end

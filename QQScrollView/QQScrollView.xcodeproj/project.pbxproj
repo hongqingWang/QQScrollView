@@ -35,7 +35,6 @@
 		04577C841FD7EE6700A0DB29 /* QQHomeWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04577C831FD7EE6700A0DB29 /* QQHomeWebViewController.m */; };
 		04577C891FD7F62000A0DB29 /* MBProgressHUD+QQ.m in Sources */ = {isa = PBXBuildFile; fileRef = 04577C871FD7F62000A0DB29 /* MBProgressHUD+QQ.m */; };
 		04577C8A1FD7F62000A0DB29 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 04577C881FD7F62000A0DB29 /* MBProgressHUD.bundle */; };
-		045F762A1FE797EC003A08C3 /* QQNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 045F76291FE797EC003A08C3 /* QQNewsModel.m */; };
 		04DEE6001FD8E37D008CA032 /* UIColor+QQ.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DEE5FF1FD8E37D008CA032 /* UIColor+QQ.m */; };
 		04DEE60C1FD8EF69008CA032 /* qq_item_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 04DEE60B1FD8EF69008CA032 /* qq_item_list.json */; };
 		04DEE6121FD8F1F4008CA032 /* QQHomeA.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DEE6111FD8F1F4008CA032 /* QQHomeA.m */; };
@@ -105,8 +104,6 @@
 		04577C861FD7F62000A0DB29 /* MBProgressHUD+QQ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+QQ.h"; sourceTree = "<group>"; };
 		04577C871FD7F62000A0DB29 /* MBProgressHUD+QQ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+QQ.m"; sourceTree = "<group>"; };
 		04577C881FD7F62000A0DB29 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
-		045F76281FE797EC003A08C3 /* QQNewsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QQNewsModel.h; sourceTree = "<group>"; };
-		045F76291FE797EC003A08C3 /* QQNewsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQNewsModel.m; sourceTree = "<group>"; };
 		04DEE5FE1FD8E37D008CA032 /* UIColor+QQ.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+QQ.h"; sourceTree = "<group>"; };
 		04DEE5FF1FD8E37D008CA032 /* UIColor+QQ.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+QQ.m"; sourceTree = "<group>"; };
 		04DEE60B1FD8EF69008CA032 /* qq_item_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = qq_item_list.json; sourceTree = "<group>"; };
@@ -185,8 +182,6 @@
 			children = (
 				04077AA81FDA43D9001694B4 /* QQNews.h */,
 				04077AA91FDA43D9001694B4 /* QQNews.m */,
-				045F76281FE797EC003A08C3 /* QQNewsModel.h */,
-				045F76291FE797EC003A08C3 /* QQNewsModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -729,7 +724,6 @@
 				04EAF5C31FD14BB8005817DD /* QQGenneralViewController.m in Sources */,
 				04105BCE1FD6870300DC3EF3 /* QQHomeMainListViewModel.m in Sources */,
 				04077AAA1FDA43D9001694B4 /* QQNews.m in Sources */,
-				045F762A1FE797EC003A08C3 /* QQNewsModel.m in Sources */,
 				04577C6C1FD7878000A0DB29 /* QQHomeAaCell.m in Sources */,
 				04DEE61B1FD92E1D008CA032 /* QQHomeAbCell.m in Sources */,
 				04EAF5A91FD13B06005817DD /* main.m in Sources */,
